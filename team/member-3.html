@@ -1,268 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nama 3 | Senior Risk & Data Analyst | Activa Consulting</title>
-  <meta name="description" content="Portfolio and profile of Nama 3, Senior Risk & Data Analyst at Activa Consulting.">
+  <title>Bernadeta Andrea P | Investment Consulting | ACTIVA Consulting</title>
+  <meta name="description" content="Profil profesional dan portofolio proyek Bernadeta Andrea P — Practice Lead Konsultasi Investasi & Portofolio di ACTIVA Consulting & Sains Aktuaria ITS Surabaya.">
   <link rel="icon" type="image/png" href="../logo.png">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
 
-  <!-- Header -->
-  <header class="header scrolled" id="header">
-    <div class="container nav-container">
-      <a href="../index.html" class="brand-logo" aria-label="Activa Consulting Home">
-        <img src="../logo.png" alt="Activa Consulting Logo">
-        <div class="brand-text">
-          <span class="brand-name">ACTIVA</span>
-          <span class="brand-tagline">CONSULTING</span>
+  <!-- Google Fonts: Editorial Serif + Clean Sans + Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              paper: '#F2F6FB',
+              surface: '#FFFFFF',
+              dark: '#0E254A',
+              deep: '#081730',
+              lead: '#334155',
+              muted: '#64748B',
+              border: '#D3E0EE',
+              borderFine: '#E2EAF2',
+              primary: '#16396B',
+              accent: '#0088CC',
+              sky: '#0EA5E9',
+              lightBlue: '#E6F0FA'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F2F6FB;
+      color: #0E254A;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    .fine-border {
+      border-color: #D3E0EE;
+    }
+    .fine-border-light {
+      border-color: #E2EAF2;
+    }
+    ::selection {
+      background-color: #16396B;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-brand-lead bg-brand-paper">
+
+  <!-- ==================== EXECUTIVE HEADER ==================== -->
+  <header class="border-b fine-border bg-brand-paper/95 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center space-x-3.5 group">
+        <img src="../logo.png" alt="ACTIVA Consulting Logo" class="h-9 w-auto object-contain">
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors leading-none">ACTIVA</span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">Consulting / ITS</span>
         </div>
       </a>
 
-      <div class="header-actions">
-        <a href="../index.html#team" class="back-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          Back to Team Directory
+      <div class="flex items-center space-x-6">
+        <a href="../index.html#advisors" class="text-xs font-mono tracking-wider uppercase text-brand-primary hover:text-brand-dark flex items-center space-x-1 font-bold">
+          <span>&larr;</span>
+          <span>Kembali ke Tim Konsultan</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Profile Hero Card -->
-  <section class="profile-hero">
-    <div class="container">
-      <div class="back-link-bar">
-        <a href="../index.html" class="back-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          ← Return to Activa Home
-        </a>
-      </div>
-
-      <div class="profile-card-main">
-        <div class="profile-avatar-box">
-          <img src="../assets/images/member-3.jpg" alt="Nama 3 - Senior Risk & Data Analyst" class="profile-avatar-img">
-        </div>
-
-        <div class="profile-header-info">
-          <span class="profile-role-tag">Core Founding Team</span>
-          <h1 class="profile-full-name">Nama 3</h1>
-          <div class="profile-credentials-line">
-            <strong>Senior Risk & Data Analyst</strong> • Statistics & Quantitative Science • Bandung, Indonesia
-          </div>
-
-          <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7; margin-bottom: 18px;">
-            Leading computational data modeling, automated stress-testing simulations, default probability prediction, and predictive dashboard architecture for the Activa team.
-          </p>
-
-          <div class="profile-stats-bar">
-            <div>
-              <div class="profile-stat-val">3+ Yrs</div>
-              <div class="profile-stat-lbl">Data Science Practice</div>
+  <main>
+    <!-- ==================== PROFILE ASYMMETRIC HERO ==================== -->
+    <section class="border-b fine-border pt-14 pb-18 lg:pt-20 lg:pb-24 bg-brand-surface">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left Column: Consultant Name & Overview -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-primary">
+              <span>Sains Aktuaria ITS Surabaya</span>
+              <span class="text-brand-muted">•</span>
+              <span>Senior Practice Lead</span>
             </div>
-            <div>
-              <div class="profile-stat-val">25+</div>
-              <div class="profile-stat-lbl">Algorithmic Pipelines</div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-brand-dark">
+              Bernadeta Andrea P
+            </h1>
+
+            <p class="font-mono text-xs uppercase tracking-widest text-brand-primary font-bold">
+              Practice Lead — Konsultasi Investasi & Alokasi Portofolio
+            </p>
+
+            <p class="text-base lg:text-lg font-light text-brand-lead max-w-2xl leading-relaxed pt-1">
+              Mahasiswa semester 7 Sains Aktuaria Institut Teknologi Sepuluh Nopember (ITS) dengan spesialisasi penerapan metode kuantitatif aktuaria dalam analisis investasi, optimasi portofolio pendapatan tetap (Fixed Income & Obligasi), Cash Flow Matching liabilitas dana pensiun, serta studi kelayakan pasar modal.
+            </p>
+
+            <!-- Industry Track Record Markers -->
+            <div class="pt-4 border-t fine-border-light space-y-2">
+              <p class="font-mono text-xs uppercase tracking-widest text-brand-muted">Rekam Jejak Institusional:</p>
+              <div class="flex flex-wrap gap-2 text-xs font-mono text-brand-dark">
+                <span class="px-3 py-1 bg-brand-paper border fine-border">Dapen Telkom Bandung</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">BPJS Kesehatan Surakarta</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">KMK ITS Data Center</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">HIMASAKTA ITS</span>
+              </div>
             </div>
-            <div>
-              <div class="profile-stat-val">99.1%</div>
-              <div class="profile-stat-lbl">Statistical Validation</div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 flex flex-wrap gap-3 font-mono text-xs">
+              <a href="mailto:andreaparamita05@gmail.com?subject=Konsultasi%20Investasi%20-%20ACTIVA" 
+                 class="px-5 py-2.5 bg-brand-primary text-white font-bold uppercase tracking-wider hover:bg-brand-dark transition-colors">
+                andreaparamita05@gmail.com
+              </a>
+              <a href="https://linkedin.com/in/andreaparamita" target="_blank" rel="noopener noreferrer" 
+                 class="px-5 py-2.5 border fine-border text-brand-dark font-bold uppercase tracking-wider hover:bg-brand-paper transition-colors">
+                LinkedIn Profile
+              </a>
+              <a href="https://instagram.com/andrea_paramita" target="_blank" rel="noopener noreferrer" 
+                 class="px-5 py-2.5 border fine-border text-brand-muted uppercase tracking-wider hover:text-brand-dark transition-colors">
+                @andrea_paramita
+              </a>
             </div>
           </div>
 
-          <div class="profile-actions">
-            <a href="mailto:activaconsulting.team@gmail.com?subject=Inquiry%20for%20Nama%203%20-%20Activa" class="btn btn-primary">
-              Contact Nama 3 via Email
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              Chat on WhatsApp
-            </a>
+          <!-- Right Column: Portrait Photo with Fine Border -->
+          <div class="lg:col-span-4 border-t lg:border-t-0 lg:border-l fine-border pt-8 lg:pt-0 lg:pl-10 space-y-4">
+            <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
+              <img src="../assets/images/member-andrea-portrait.png" 
+                   alt="Bernadeta Andrea P - Practice Lead" 
+                   class="w-full h-full object-cover filter contrast-[1.05]">
+            </div>
+            <div class="text-xs font-mono text-brand-muted flex justify-between border-t fine-border-light pt-2">
+              <span>Konsultan Utama ACTIVA</span>
+              <span class="text-brand-primary font-bold">Investment Advisory</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Detailed Sections -->
-  <main class="container" style="padding: 40px 24px;">
-    <!-- 1. ABOUT ME -->
-    <section class="profile-card" id="about-me">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-          </svg>
-        </span>
-        About Me
-      </h2>
-      <p style="color: var(--text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. As Senior Risk & Data Analyst at Activa Consulting, I specialize in combining Python, R, and statistical machine learning to transform large financial datasets into intuitive decision models.
-      </p>
-      <p style="color: var(--text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">
-        Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. In alignment with UN Sustainable Development Goal 8, my passion lies in developing transparent risk-scoring tools that enable fair, inclusive credit assessment and robust risk containment.
-      </p>
-
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <span class="project-badge">Python / R / SQL</span>
-        <span class="project-badge">Machine Learning Classification</span>
-        <span class="project-badge">Monte Carlo Simulation</span>
-        <span class="project-badge">Stress Testing Engines</span>
-        <span class="project-badge">Data Visualization</span>
-      </div>
-    </section>
-
-    <!-- 2. WORK EXPERIENCE -->
-    <section class="profile-card" id="work-experience">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-        </span>
-        Work Experience
-      </h2>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2024 – Present</div>
-          <h3 class="timeline-role">Senior Risk & Data Analyst & Co-Founder</h3>
-          <div class="timeline-institution">Activa Consulting (Student Consulting Initiative)</div>
-          <p class="timeline-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Building automated scenario analysis scripts, data preprocessing pipelines, and interactive executive dashboards for consulting projects.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2023 – 2024</div>
-          <h3 class="timeline-role">Data Science & Analytics Intern</h3>
-          <div class="timeline-institution">Fintech Credit Analytics Lab — Bandung</div>
-          <p class="timeline-desc">
-            Sed ut perspiciatis unde omnis iste natus error. Engineered predictive churn and credit scoring algorithms using XGBoost and Random Forest on over 100,000 anonymized transaction records.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2022 – 2023</div>
-          <h3 class="timeline-role">Statistical Computing Lab Assistant</h3>
-          <div class="timeline-institution">University Statistical Laboratory</div>
-          <p class="timeline-desc">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Guided practical lab sessions in multivariate statistical analysis, regression diagnostics, and time-series forecasting.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- 3. ORGANISATION EXPERIENCE -->
-    <section class="profile-card" id="organisation-experience">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </span>
-        Organisation Experience
-      </h2>
+    <!-- ==================== DETAILED CONTENT LAYOUT ==================== -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          <!-- Left Main Column: Project Portfolio (9 Projects) -->
+          <div class="lg:col-span-8 space-y-12">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Portofolio & Rekam Jejak</span>
+              <h2 class="font-serif text-3xl lg:text-4xl text-brand-dark mt-2">Daftar Penugasan & Riset Investasi</h2>
+              <p class="text-xs font-mono text-brand-muted mt-2">9 Proyek Alokasi Portofolio, Valuasi Kelayakan & Analisis Risiko</p>
+            </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2023 – Present</div>
-          <h3 class="timeline-role">President</h3>
-          <div class="timeline-institution">University Data Science & Machine Learning Community</div>
-          <p class="timeline-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearheaded university bootcamps on predictive modeling, hosted national hackathon delegations, and fostered cross-faculty research collaborations.
-          </p>
-        </div>
+            <div class="divide-y fine-border border-t fine-border">
+              
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 01 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Optimasi Portofolio Obligasi dalam Cash Flow Matching</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pemenuhan liabilitas dana pensiun dengan simulasi carry-forward, pergerakan suku bunga, dan kendala pinjaman.
+                </p>
+              </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2022 – 2023</div>
-          <h3 class="timeline-role">Lead Workshop Coordinator</h3>
-          <div class="timeline-institution">Bandung Python & Statistics Developer Circle</div>
-          <p class="timeline-desc">
-            Duis aute irure dolor in reprehenderit in voluptate. Conducted bi-weekly open sessions on computational risk models and time-series libraries.
-          </p>
-        </div>
-      </div>
-    </section>
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 02 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Kelayakan Investasi Saham ICBP & INDF untuk Dana Pensiun</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Evaluasi rasio kinerja keuangan, cost of capital, profil risiko pasar, skor ESG, dan valuasi harga wajar.
+                </p>
+              </div>
 
-    <!-- 4. KEY PROJECTS & CASE STUDIES -->
-    <section class="profile-card" id="projects">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </span>
-        Key Projects & Case Studies
-      </h2>
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 03 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Risiko Portofolio Multiaset (S&P, Minyak WTI, MSFT)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pemodelan volatilitas terintegrasi melalui pendekatan ARIMA, model non-linier, simulasi Monte Carlo, dan MCMC.
+                </p>
+              </div>
 
-      <div class="projects-grid">
-        <div class="project-box">
-          <span class="project-badge">Data Science Hackathon</span>
-          <h3 class="project-name">Algorithmic Default Risk Predictor</h3>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built an ensemble predictive model achieving 92.4% AUC on peer-to-peer loan default classification with automated hyperparameter tuning.
-          </p>
-          <div class="project-impact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            1st Place National Data Analytics Championship
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 04 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Peramalan Kecepatan Perputaran Uang (Velocity of Money)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Penerapan model deret waktu ARIMA untuk memproyeksikan indikator likuiditas makroekonomi masa mendatang.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 05 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Eksplorasi Data World Happiness Report</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pemodelan regresi linear berganda dalam menganalisis determinan kebahagiaan global dan kesejahteraan ekonomi.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 06 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Pemodelan Regresi Logistik Biner Kelangsungan Hidup</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Evaluasi faktor-faktor risiko peluang keselamatan menggunakan pendekatan probabilitas model Logit.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 07 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Pengelompokan Klaster Menggunakan K-Means</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Segmentasi komprehensif data berdimensi tinggi berdasarkan karakteristik kimiawi dan profiling statistik.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 08 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Klasifikasi Churn Nasabah Perbankan (Naive Bayes & SVM)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Penerapan machine learning untuk mengidentifikasi indikasi pengalihan rekening nasabah institusi finansial.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 09 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Perancangan Produk Fisherman Insurance</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Struktur penetapan premi aktuaria mikro dan skema perlindungan finansial bagi masyarakat nelayan pesisir.
+                </p>
+              </div>
+
+            </div>
           </div>
-        </div>
 
-        <div class="project-box">
-          <span class="project-badge">Interactive Dashboard</span>
-          <h3 class="project-name">Real-Time Macroeconomic Risk Monitor</h3>
-          <p class="project-desc">
-            Excepteur sint occaecat cupidatat non proident. Developed an interactive Streamlit/Plotly dashboard tracking inflation shocks, interest rate sensitivities, and liquidity metrics.
-          </p>
-          <div class="project-impact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Utilized by 3 Student Investment Clubs
+          <!-- Right Sidebar: Hard Skills, Experience & Education -->
+          <div class="lg:col-span-4 space-y-12">
+            
+            <!-- Hard Skills & Metodologi -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Keahlian Teknis</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Matriks Alat & Metodologi</h3>
+              
+              <div class="border-t fine-border pt-3 space-y-2.5 text-xs font-mono text-brand-lead">
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Tableau</span>
+                  <span class="text-brand-muted">Investment Dashboards</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">R Studio</span>
+                  <span class="text-brand-muted">Portfolio Optimization & ARIMA</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Python</span>
+                  <span class="text-brand-muted">Financial & Quant Modeling</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Microsoft Excel</span>
+                  <span class="text-brand-muted">Valuasi DCF & Cash Flow</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">IBM SPSS 27</span>
+                  <span class="text-brand-muted">Statistika Multivariat</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Minitab</span>
+                  <span class="text-brand-muted">Uji Hipotesis & Regresi</span>
+                </div>
+                <div class="flex justify-between pb-1.5">
+                  <span class="font-bold text-brand-dark">Cash Flow Matching</span>
+                  <span class="text-brand-muted">Liabilitas Dana Pensiun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Pengalaman Kerja</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Riwayat Praktik Industri</h3>
+              
+              <div class="border-t fine-border pt-4 space-y-6 text-xs">
+                <div class="space-y-1">
+                  <span class="font-mono text-[10px] uppercase text-brand-primary font-bold">Dapen Telkom, Bandung</span>
+                  <h4 class="font-bold text-brand-dark text-sm">Staff Magang Divisi Investasi (Fixed Income)</h4>
+                  <p class="text-brand-lead leading-relaxed">
+                    Analisis instrumen obligasi pemerintah dan korporasi, monitoring yield curve, evaluasi alokasi aset dana pensiun, serta cash flow matching.
+                  </p>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="font-mono text-[10px] uppercase text-brand-primary font-bold">BPJS Kesehatan Kantor Cabang Surakarta</span>
+                  <h4 class="font-bold text-brand-dark text-sm">Staff Magang Divisi Jaminan & Manfaat</h4>
+                  <p class="text-brand-lead leading-relaxed">
+                    Evaluasi utilisasi klaim jaminan kesehatan nasional, analisis program promotif preventif, serta verifikasi data kepesertaan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Organisasi -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Kepemimpinan Mahasiswa</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Organisasi Kampus</h3>
+              
+              <div class="border-t fine-border pt-4 space-y-4 text-xs">
+                <div>
+                  <h4 class="font-bold text-brand-dark">KMK ITS</h4>
+                  <p class="text-brand-muted font-mono text-[11px]">Kepala Divisi Data Center • Pengelolaan Database Anggota</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark">HIMASAKTA ITS</h4>
+                  <p class="text-brand-muted font-mono text-[11px]">Staff Hubungan Luar • Panitia ACT Go & Visit Perusahaan</p>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 5. CALL TO ACTION -->
-    <section class="profile-cta-card" id="cta">
-      <h3>Connect with Nama 3</h3>
-      <p>
-        Interested in predictive modeling, statistical programming, or risk analytics datasets? Connect with Nama 3 to discuss collaboration.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-        <a href="mailto:activaconsulting.team@gmail.com?subject=Contact%20Nama%203" class="btn btn-primary">
-          Send Direct Email
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="../index.html" class="btn btn-secondary">
-          ← Return to Activa Home
-        </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" style="margin-top: 60px;">
-    <div class="container footer-bottom" style="border: none; padding-top: 0;">
-      <div>© 2026 Activa Consulting. University Student Project. All rights reserved.</div>
-      <a href="../index.html" class="back-link">← Return to Activa Home</a>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t fine-border py-12 bg-brand-dark text-white text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 ACTIVA Consulting • Profil Bernadeta Andrea P</p>
+      <a href="../index.html#advisors" class="text-brand-sky hover:underline font-bold">
+        &larr; Kembali ke Direktori Tim Konsultan ACTIVA
+      </a>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
 </body>
 </html>

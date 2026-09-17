@@ -1,268 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nama 2 | Financial Advisory Partner | Activa Consulting</title>
-  <meta name="description" content="Portfolio and profile of Nama 2, Financial Advisory Partner at Activa Consulting.">
+  <title>Szunir Laura Herliana | Data Analyst | ACTIVA Consulting</title>
+  <meta name="description" content="Profil profesional dan portofolio proyek Szunir Laura Herliana — Lead Analyst Analisis Data Kuantitatif & Visualisasi di ACTIVA Consulting & Sains Aktuaria ITS Surabaya.">
   <link rel="icon" type="image/png" href="../logo.png">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
 
-  <!-- Header -->
-  <header class="header scrolled" id="header">
-    <div class="container nav-container">
-      <a href="../index.html" class="brand-logo" aria-label="Activa Consulting Home">
-        <img src="../logo.png" alt="Activa Consulting Logo">
-        <div class="brand-text">
-          <span class="brand-name">ACTIVA</span>
-          <span class="brand-tagline">CONSULTING</span>
+  <!-- Google Fonts: Editorial Serif + Clean Sans + Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              paper: '#F2F6FB',
+              surface: '#FFFFFF',
+              dark: '#0E254A',
+              deep: '#081730',
+              lead: '#334155',
+              muted: '#64748B',
+              border: '#D3E0EE',
+              borderFine: '#E2EAF2',
+              primary: '#16396B',
+              accent: '#0088CC',
+              sky: '#0EA5E9',
+              lightBlue: '#E6F0FA'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F2F6FB;
+      color: #0E254A;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    .fine-border {
+      border-color: #D3E0EE;
+    }
+    .fine-border-light {
+      border-color: #E2EAF2;
+    }
+    ::selection {
+      background-color: #16396B;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-brand-lead bg-brand-paper">
+
+  <!-- ==================== EXECUTIVE HEADER ==================== -->
+  <header class="border-b fine-border bg-brand-paper/95 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center space-x-3.5 group">
+        <img src="../logo.png" alt="ACTIVA Consulting Logo" class="h-9 w-auto object-contain">
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors leading-none">ACTIVA</span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">Consulting / ITS</span>
         </div>
       </a>
 
-      <div class="header-actions">
-        <a href="../index.html#team" class="back-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          Back to Team Directory
+      <div class="flex items-center space-x-6">
+        <a href="../index.html#advisors" class="text-xs font-mono tracking-wider uppercase text-brand-primary hover:text-brand-dark flex items-center space-x-1 font-bold">
+          <span>&larr;</span>
+          <span>Kembali ke Tim Konsultan</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Profile Hero Card -->
-  <section class="profile-hero">
-    <div class="container">
-      <div class="back-link-bar">
-        <a href="../index.html" class="back-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          ← Return to Activa Home
-        </a>
-      </div>
-
-      <div class="profile-card-main">
-        <div class="profile-avatar-box">
-          <img src="../assets/images/member-2.jpg" alt="Nama 2 - Financial Advisory Partner" class="profile-avatar-img">
-        </div>
-
-        <div class="profile-header-info">
-          <span class="profile-role-tag">Core Founding Team</span>
-          <h1 class="profile-full-name">Nama 2</h1>
-          <div class="profile-credentials-line">
-            <strong>Financial Advisory Partner</strong> • Corporate Finance & Economics • Surabaya, Indonesia
-          </div>
-
-          <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7; margin-bottom: 18px;">
-            Specializing in discounted cash flow valuation, capital budgeting, financial statement forecasting, and economic feasibility studies for emerging enterprises.
-          </p>
-
-          <div class="profile-stats-bar">
-            <div>
-              <div class="profile-stat-val">3+ Yrs</div>
-              <div class="profile-stat-lbl">Corporate Finance Studies</div>
+  <main>
+    <!-- ==================== PROFILE ASYMMETRIC HERO ==================== -->
+    <section class="border-b fine-border pt-14 pb-18 lg:pt-20 lg:pb-24 bg-brand-surface">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left Column: Consultant Name & Overview -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-primary">
+              <span>Sains Aktuaria ITS Surabaya</span>
+              <span class="text-brand-muted">•</span>
+              <span>Lead Data Analyst</span>
             </div>
-            <div>
-              <div class="profile-stat-val">12+</div>
-              <div class="profile-stat-lbl">Valuation Models Built</div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-brand-dark">
+              Szunir Laura Herliana
+            </h1>
+
+            <p class="font-mono text-xs uppercase tracking-widest text-brand-primary font-bold">
+              Lead Analyst — Analisis Data Kuantitatif & Visualisasi
+            </p>
+
+            <p class="text-base lg:text-lg font-light text-brand-lead max-w-2xl leading-relaxed pt-1">
+              Mahasiswa semester 7 Sains Aktuaria Institut Teknologi Sepuluh Nopember (ITS) dengan spesialisasi pengolahan big data operasional, algoritma Machine Learning (K-NN, SVM), pemodelan time-series ARIMA, Catastrophe Modeling gempa bumi, serta arsitektur dashboard eksekutif berbasis Business Intelligence.
+            </p>
+
+            <!-- Industry Track Record Markers -->
+            <div class="pt-4 border-t fine-border-light space-y-2">
+              <p class="font-mono text-xs uppercase tracking-widest text-brand-muted">Rekam Jejak Institusional:</p>
+              <div class="flex flex-wrap gap-2 text-xs font-mono text-brand-dark">
+                <span class="px-3 py-1 bg-brand-paper border fine-border">PT Pelindo Energi Logistik</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">PT Berkah Industri Mesin Angkat (BIMA)</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">HIMASAKTA ITS</span>
+                <span class="px-3 py-1 bg-brand-paper border fine-border">Jelajah Aktuaria ITS</span>
+              </div>
             </div>
-            <div>
-              <div class="profile-stat-val">Top 3</div>
-              <div class="profile-stat-lbl">National Equity Research</div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 flex flex-wrap gap-3 font-mono text-xs">
+              <a href="mailto:szunirlaura@gmail.com?subject=Konsultasi%20Data%20Analytics%20-%20ACTIVA" 
+                 class="px-5 py-2.5 bg-brand-primary text-white font-bold uppercase tracking-wider hover:bg-brand-dark transition-colors">
+                szunirlaura@gmail.com
+              </a>
+              <a href="https://linkedin.com/in/szunirlaura" target="_blank" rel="noopener noreferrer" 
+                 class="px-5 py-2.5 border fine-border text-brand-dark font-bold uppercase tracking-wider hover:bg-brand-paper transition-colors">
+                LinkedIn Profile
+              </a>
+              <a href="https://instagram.com/szunirlauraaa" target="_blank" rel="noopener noreferrer" 
+                 class="px-5 py-2.5 border fine-border text-brand-muted uppercase tracking-wider hover:text-brand-dark transition-colors">
+                @szunirlauraaa
+              </a>
             </div>
           </div>
 
-          <div class="profile-actions">
-            <a href="mailto:activaconsulting.team@gmail.com?subject=Inquiry%20for%20Nama%202%20-%20Activa" class="btn btn-primary">
-              Contact Nama 2 via Email
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              Chat on WhatsApp
-            </a>
+          <!-- Right Column: Portrait Photo with Fine Border -->
+          <div class="lg:col-span-4 border-t lg:border-t-0 lg:border-l fine-border pt-8 lg:pt-0 lg:pl-10 space-y-4">
+            <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
+              <img src="../assets/images/member-szunir-portrait.png" 
+                   alt="Szunir Laura Herliana - Lead Analyst" 
+                   class="w-full h-full object-cover filter contrast-[1.05]">
+            </div>
+            <div class="text-xs font-mono text-brand-muted flex justify-between border-t fine-border-light pt-2">
+              <span>Konsultan Utama ACTIVA</span>
+              <span class="text-brand-primary font-bold">Data Analytics</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Detailed Sections -->
-  <main class="container" style="padding: 40px 24px;">
-    <!-- 1. ABOUT ME -->
-    <section class="profile-card" id="about-me">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-          </svg>
-        </span>
-        About Me
-      </h2>
-      <p style="color: var(--text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. As Financial Advisory Partner at Activa Consulting, I lead our corporate valuation and investment advisory division. I focus on combining fundamental valuation principles with probabilistic scenario simulations.
-      </p>
-      <p style="color: var(--text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Committed to UN Sustainable Development Goal 8, I believe in empowering young entrepreneurs and student initiatives with transparent, robust financial planning to ensure sustainable solvency.
-      </p>
-
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <span class="project-badge">DCF Valuation</span>
-        <span class="project-badge">Financial Modeling</span>
-        <span class="project-badge">Capital Budgeting</span>
-        <span class="project-badge">Cost of Capital (WACC)</span>
-        <span class="project-badge">Scenario Analysis</span>
-      </div>
-    </section>
-
-    <!-- 2. WORK EXPERIENCE -->
-    <section class="profile-card" id="work-experience">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-        </span>
-        Work Experience
-      </h2>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2024 – Present</div>
-          <h3 class="timeline-role">Financial Advisory Partner & Co-Founder</h3>
-          <div class="timeline-institution">Activa Consulting (Student Consulting Initiative)</div>
-          <p class="timeline-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Directing business valuation studies, financial health diagnostic reviews, and cash flow projections for student business incubation projects.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2023 – 2024</div>
-          <h3 class="timeline-role">Corporate Finance & Research Intern</h3>
-          <div class="timeline-institution">Regional Capital Advisory Group — Surabaya</div>
-          <p class="timeline-desc">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. Developed 3-statement integrated forecast models, sensitivity tables, and compiled peer company multiples analysis.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2022 – 2023</div>
-          <h3 class="timeline-role">Financial Analyst Intern</h3>
-          <div class="timeline-institution">University Business Incubation Hub</div>
-          <p class="timeline-desc">
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Evaluated 15+ student startup business plans for grant allocations and conducted working capital assessment audits.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- 3. ORGANISATION EXPERIENCE -->
-    <section class="profile-card" id="organisation-experience">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </span>
-        Organisation Experience
-      </h2>
+    <!-- ==================== DETAILED CONTENT LAYOUT ==================== -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          <!-- Left Main Column: Project Portfolio (14 Projects) -->
+          <div class="lg:col-span-8 space-y-12">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Portofolio & Rekam Jejak</span>
+              <h2 class="font-serif text-3xl lg:text-4xl text-brand-dark mt-2">Daftar Penugasan & Riset Analitis</h2>
+              <p class="text-xs font-mono text-brand-muted mt-2">14 Proyek Pengolahan Big Data, Predictive Analytics & Visualisasi</p>
+            </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2023 – Present</div>
-          <h3 class="timeline-role">Head of Investment & Finance Club</h3>
-          <div class="timeline-institution">Faculty of Economics & Business Student Association</div>
-          <p class="timeline-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Organizing university investment symposiums, trading simulations, and guest lectures from CFA charterholders.
-          </p>
-        </div>
+            <div class="divide-y fine-border border-t fine-border">
+              
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 01 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Gap Matrix & Gap Kompetensi Pegawai</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Evaluasi kebutuhan pelatihan dan pemetaan talenta SDM logistik maritim berbasis gap analysis matriks.
+                </p>
+              </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2022 – 2023</div>
-          <h3 class="timeline-role">Treasurer & Financial Controller</h3>
-          <div class="timeline-institution">Annual National Economics Festival</div>
-          <p class="timeline-desc">
-            Duis aute irure dolor in reprehenderit in voluptate. Managed the operational budget of IDR 120M with zero audit variance and transparent sponsorship accounting.
-          </p>
-        </div>
-      </div>
-    </section>
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 02 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Klasifikasi Kompetensi dengan K-Nearest Neighbor (K-NN)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Penerapan machine learning supervised untuk mengklasifikasi tingkat kemahiran karyawan operasional.
+                </p>
+              </div>
 
-    <!-- 4. KEY PROJECTS & CASE STUDIES -->
-    <section class="profile-card" id="projects">
-      <h2 class="profile-card-title">
-        <span class="icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </span>
-        Key Projects & Case Studies
-      </h2>
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 03 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Dashboard Monitoring Rencana Pelatihan SDM</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pengembangan visualisasi interaktif pemantauan realisasi pelatihan kerja tahunan korporasi.
+                </p>
+              </div>
 
-      <div class="projects-grid">
-        <div class="project-box">
-          <span class="project-badge">Equity Research</span>
-          <h3 class="project-name">Renewable Energy IPO Valuation Defense</h3>
-          <p class="project-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built an in-depth DCF and EV/EBITDA valuation model for a regional solar power developer undergoing initial public offering evaluation.
-          </p>
-          <div class="project-impact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            2nd Winner National Equity Research Challenge
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 04 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Dashboard Peserta Donor Darah Terintegrasi</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Perancangan sistem visual pelacakan registrasi dan riwayat donor darah korporat.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 05 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Aplikasi Trash Treasure (Excel Macro & VBA)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Otomatisasi kalkulasi nilai ekonomis pengelolaan limbah menggunakan algoritma terprogram VBA.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 06 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Faktor Risiko Kredit (Regresi Logistik Biner)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pemodelan determinan probabilitas gagal bayar debitur untuk mitigasi eksposur kredit bermasalah.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 07 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Peramalan Arus Bongkar Muat Internasional Pelabuhan Belawan</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Penerapan model deret waktu ARIMA non-musiman untuk memproyeksikan volume logistik maritim.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 08 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Kelayakan Investasi Saham ICBP & INDF</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Evaluasi fundamental pasar modal, rasio profitabilitas, dan valuasi intrinsik harga wajar saham.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 09 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Risiko Portofolio Multiaset (S&P 500, Minyak WTI, MSFT)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Simulasi Monte Carlo, model nonlinear, dan estimasi Bayesian MCMC untuk evaluasi Value at Risk (VaR).
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 10 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Ketahanan Data Perceraian (Survival Analysis)</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Penerapan Cox Proportional Hazards dan Extended Survival Model pada data demografi kependudukan.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 11 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Catastrophe Modeling Gempa Megathrust</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Pemodelan estimasi kerugian finansial akibat bencana gempa bumi katastrofik sebagai dasar evaluasi mitigasi risiko.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 12 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Komparasi Algoritma K-NN vs SVM untuk Langganan Deposito</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Benchmark performa akurasi, sensitivitas, dan spesifisitas machine learning dalam memprediksi nasabah perbankan.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 13 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Analisis Kelayakan Investasi Kapal Angkut 30 GT & 150 GT</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Evaluasi tekno-ekonomis operasional armada pelayaran komersial dan payback period.
+                </p>
+              </div>
+
+              <div class="py-6 space-y-1">
+                <span class="font-mono text-[11px] text-brand-primary font-bold">PROYEK 14 /</span>
+                <h4 class="text-base font-bold text-brand-dark">Kampanye Rekrutmen Multi-Divisi Berbasis Analisis LinkedIn</h4>
+                <p class="text-xs text-brand-lead leading-relaxed">
+                  Optimasi rekrutmen posisi strategis Finance, Legal, IT, dan Desain melalui metrik konversi pelamar.
+                </p>
+              </div>
+
+            </div>
           </div>
-        </div>
 
-        <div class="project-box">
-          <span class="project-badge">Financial Restructuring</span>
-          <h3 class="project-name">University Cooperative Working Capital Redesign</h3>
-          <p class="project-desc">
-            Sed ut perspiciatis unde omnis iste natus. Restructured inventory turnover schedules and supplier payment terms to relieve short-term liquidity bottlenecks.
-          </p>
-          <div class="project-impact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Operating Cash Flow Cycle Improved by 18 Days
+          <!-- Right Sidebar: Hard Skills, Experience & Education -->
+          <div class="lg:col-span-4 space-y-12">
+            
+            <!-- Hard Skills & Metodologi -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Keahlian Teknis</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Matriks Alat & Metodologi</h3>
+              
+              <div class="border-t fine-border pt-3 space-y-2.5 text-xs font-mono text-brand-lead">
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Python</span>
+                  <span class="text-brand-muted">Pandas, Scikit-Learn</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">R Studio</span>
+                  <span class="text-brand-muted">Catastrophe & Survival Model</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Microsoft Excel</span>
+                  <span class="text-brand-muted">VBA Macro & Data Pipeline</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Looker Studio</span>
+                  <span class="text-brand-muted">Interactive Dashboards</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">IBM SPSS 27</span>
+                  <span class="text-brand-muted">Analisis Regresi & Klasifikasi</span>
+                </div>
+                <div class="flex justify-between pb-1.5 border-b fine-border-light">
+                  <span class="font-bold text-brand-dark">Minitab</span>
+                  <span class="text-brand-muted">Analisis Statistik Kuantitatif</span>
+                </div>
+                <div class="flex justify-between pb-1.5">
+                  <span class="font-bold text-brand-dark">Matlab & C++</span>
+                  <span class="text-brand-muted">Komputasi Numerik</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Pengalaman Kerja</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Riwayat Praktik Industri</h3>
+              
+              <div class="border-t fine-border pt-4 space-y-6 text-xs">
+                <div class="space-y-1">
+                  <span class="font-mono text-[10px] uppercase text-brand-primary font-bold">PT Pelindo Energi Logistik</span>
+                  <h4 class="font-bold text-brand-dark text-sm">Staff Magang Manajemen Risiko</h4>
+                  <p class="text-brand-lead leading-relaxed">
+                    Identifikasi risiko operasional pelabuhan logistik maritim, evaluasi kepatuhan regulasi, serta penyusunan matriks mitigasi risiko.
+                  </p>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="font-mono text-[10px] uppercase text-brand-primary font-bold">PT Pelindo Energi Logistik</span>
+                  <h4 class="font-bold text-brand-dark text-sm">Staff Magang Sumber Daya Manusia</h4>
+                  <p class="text-brand-lead leading-relaxed">
+                    Analisis data kompetensi karyawan, gap matrix pelatihan kerja, dan perancangan dashboard pemantauan SDM.
+                  </p>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="font-mono text-[10px] uppercase text-brand-primary font-bold">PT Berkah Industri Mesin Angkat (BIMA)</span>
+                  <h4 class="font-bold text-brand-dark text-sm">Staff Magang Divisi SDM</h4>
+                  <p class="text-brand-lead leading-relaxed">
+                    Pengolahan database kepegawaian, verifikasi administratif, dan evaluasi kebutuhan pengembangan tenaga kerja operasional.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Organisasi -->
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Kepemimpinan Mahasiswa</span>
+              <h3 class="font-serif text-2xl text-brand-dark">Organisasi Kampus</h3>
+              
+              <div class="border-t fine-border pt-4 space-y-4 text-xs">
+                <div>
+                  <h4 class="font-bold text-brand-dark">HIMASAKTA ITS</h4>
+                  <p class="text-brand-muted font-mono text-[11px]">Staff Eksternal • Ketua Pelaksana Abdimas 2 • Bendahara Abdimas 1 • Kadiv Humas ACT Go</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark">Jelajah Aktuaria ITS</h4>
+                  <p class="text-brand-muted font-mono text-[11px]">Staff Ahli Business Case Competition</p>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 5. CALL TO ACTION -->
-    <section class="profile-cta-card" id="cta">
-      <h3>Connect with Nama 2</h3>
-      <p>
-        Interested in discussing corporate valuation, financial projections, or partnership initiatives? Reach out directly to discuss opportunities.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-        <a href="mailto:activaconsulting.team@gmail.com?subject=Contact%20Nama%202" class="btn btn-primary">
-          Send Direct Email
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="../index.html" class="btn btn-secondary">
-          ← Return to Activa Home
-        </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" style="margin-top: 60px;">
-    <div class="container footer-bottom" style="border: none; padding-top: 0;">
-      <div>© 2026 Activa Consulting. University Student Project. All rights reserved.</div>
-      <a href="../index.html" class="back-link">← Return to Activa Home</a>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t fine-border py-12 bg-brand-dark text-white text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 ACTIVA Consulting • Profil Szunir Laura Herliana</p>
+      <a href="../index.html#advisors" class="text-brand-sky hover:underline font-bold">
+        &larr; Kembali ke Direktori Tim Konsultan ACTIVA
+      </a>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
 </body>
 </html>
