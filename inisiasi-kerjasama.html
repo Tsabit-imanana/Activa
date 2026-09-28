@@ -175,7 +175,7 @@
             <!-- Service Selection Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="serviceOptionsContainer">
               
-              <!-- Layanan 01: Konsultasi Keuangan -->
+              <!-- Layanan 01: Manajemen Risiko Terintegrasi (Khusnul) -->
               <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between selected" data-service-id="1">
                 <input type="radio" name="service" value="1" class="sr-only" checked onchange="onServiceChange(1)">
                 <div>
@@ -185,19 +185,19 @@
                       <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
                     </span>
                   </div>
-                  <h3 class="text-base font-bold text-brand-dark leading-snug">Konsultasi Keuangan</h3>
-                  <p class="font-mono text-[10px] uppercase text-brand-muted mt-0.5">Financial Consulting & Solvency</p>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Manajemen Risiko Terintegrasi</h3>
+                  <p class="font-mono text-xs uppercase text-brand-muted mt-0.5">Actuarial Risk & Mitigation</p>
                   <p class="text-xs text-brand-lead mt-3 leading-relaxed">
-                    Evaluasi kesehatan rasio keuangan korporat, valuasi solvabilitas, likuiditas, dan proyeksi arus kas.
+                    Stress-testing aktuaria, pemodelan probabilitas kerugian ekstrem (VaR), dan protokol mitigasi preventif.
                   </p>
                 </div>
                 <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
                   <span>Konsultan:</span>
-                  <span class="text-brand-dark font-medium">Shabina Aulya</span>
+                  <span class="text-brand-dark font-medium">Husnul Khotimah</span>
                 </div>
               </label>
 
-              <!-- Layanan 02: Analisis Data & Visualisasi -->
+              <!-- Layanan 02: Analisis Data & Visualisasi (Laura) -->
               <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="2">
                 <input type="radio" name="service" value="2" class="sr-only" onchange="onServiceChange(2)">
                 <div>
@@ -219,7 +219,7 @@
                 </div>
               </label>
 
-              <!-- Layanan 03: Konsultasi Investasi -->
+              <!-- Layanan 03: Konsultasi Investasi (Andrea) -->
               <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="3">
                 <input type="radio" name="service" value="3" class="sr-only" onchange="onServiceChange(3)">
                 <div>
@@ -241,7 +241,7 @@
                 </div>
               </label>
 
-              <!-- Layanan 04: Manajemen Risiko Terintegrasi -->
+              <!-- Layanan 04: Konsultasi Keuangan (Aulya) -->
               <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="4">
                 <input type="radio" name="service" value="4" class="sr-only" onchange="onServiceChange(4)">
                 <div>
@@ -251,15 +251,15 @@
                       <span class="w-2 h-2 rounded-full bg-transparent"></span>
                     </span>
                   </div>
-                  <h3 class="text-base font-bold text-brand-dark leading-snug">Manajemen Risiko Terintegrasi</h3>
-                  <p class="font-mono text-xs uppercase text-brand-muted mt-0.5">Actuarial Risk & Mitigation</p>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Konsultasi Keuangan</h3>
+                  <p class="font-mono text-[10px] uppercase text-brand-muted mt-0.5">Financial Consulting & Solvency</p>
                   <p class="text-xs text-brand-lead mt-3 leading-relaxed">
-                    Stress-testing aktuaria, pemodelan probabilitas kerugian ekstrem (VaR), dan protokol mitigasi preventif.
+                    Evaluasi kesehatan rasio keuangan korporat, valuasi solvabilitas, likuiditas, dan proyeksi arus kas.
                   </p>
                 </div>
                 <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
                   <span>Konsultan:</span>
-                  <span class="text-brand-dark font-medium">Husnul Khotimah</span>
+                  <span class="text-brand-dark font-medium">Shabina Aulya</span>
                 </div>
               </label>
 
@@ -282,10 +282,10 @@
               <!-- Consultant Avatar -->
               <div class="md:col-span-4">
                 <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative shadow-inner">
-                  <img id="consultantPhoto" src="assets/images/member-shabina-portrait.png" alt="Konsultan Bertugas" class="w-full h-full object-cover">
+                  <img id="consultantPhoto" src="assets/images/member-husnul-portrait.png" alt="Konsultan Bertugas" class="w-full h-full object-cover">
                 </div>
                 <div class="p-2 bg-brand-paper border-t fine-border text-center mt-1 text-[11px] font-mono text-brand-muted">
-                  <span id="consultantProjectsBadge" class="font-bold text-brand-primary">14 Proyek Teruji</span>
+                  <span id="consultantProjectsBadge" class="font-bold text-brand-primary">12 Proyek Teruji</span>
                 </div>
               </div>
 
@@ -293,16 +293,16 @@
               <div class="md:col-span-8 space-y-4">
                 <div>
                   <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-brand-primary font-bold tracking-wider uppercase mb-1">
-                    <span id="consultantBadge">ADVISORY LEAD</span>
+                    <span id="consultantBadge">PRACTICE LEAD</span>
                     <span>•</span>
                     <span>SAINS AKTUARIA ITS</span>
                   </div>
-                  <h3 id="consultantName" class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">Shabina Aulya Anjanie H</h3>
-                  <p id="consultantRole" class="font-mono text-xs text-brand-muted mt-0.5">Konsultasi Finansial & Valuasi Solvabilitas</p>
+                  <h3 id="consultantName" class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">Husnul Khotimah</h3>
+                  <p id="consultantRole" class="font-mono text-xs text-brand-muted mt-0.5">Manajemen Risiko & Pemodelan Aktuaria</p>
                 </div>
 
                 <div class="text-xs text-brand-lead leading-relaxed border-l-2 border-brand-primary pl-3 italic" id="consultantQuote">
-                  "Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."
+                  "Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."
                 </div>
 
                 <!-- Unique Schedule Highlight Box -->
@@ -325,7 +325,7 @@
 
                 <div class="text-[11px] font-mono text-brand-muted flex items-center space-x-2">
                   <span>Rekam Jejak Klien:</span>
-                  <span id="consultantTrackRecord" class="text-brand-dark font-bold">Dapen Freeport Indonesia • BEM ITS</span>
+                  <span id="consultantTrackRecord" class="text-brand-dark font-bold">Kemenkeu RI • PT BIMA</span>
                 </div>
               </div>
 
@@ -450,17 +450,17 @@
               
               <div class="border-b fine-border-light pb-3">
                 <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Bidang Layanan:</span>
-                <p id="summaryService" class="font-bold text-brand-dark text-sm">01. Konsultasi Keuangan</p>
-                <p id="summaryServiceSub" class="text-[11px] text-brand-muted">Financial Consulting & Solvency</p>
+                <p id="summaryService" class="font-bold text-brand-dark text-sm">01. Manajemen Risiko Terintegrasi</p>
+                <p id="summaryServiceSub" class="text-[11px] text-brand-muted">Actuarial Risk & Mitigation</p>
               </div>
 
               <div class="border-b fine-border-light pb-3">
                 <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Konsultan Penanggung Jawab:</span>
                 <div class="flex items-center space-x-3 mt-1">
-                  <img id="summaryConsultantPhoto" src="assets/images/member-shabina-portrait.png" alt="Konsultan" class="w-9 h-9 object-cover border fine-border rounded-none">
+                  <img id="summaryConsultantPhoto" src="assets/images/member-husnul-portrait.png" alt="Konsultan" class="w-9 h-9 object-cover border fine-border rounded-none">
                   <div>
-                    <p id="summaryConsultant" class="font-bold text-brand-dark">Shabina Aulya Anjanie H</p>
-                    <p id="summaryConsultantRole" class="text-[10px] text-brand-muted">Advisory Lead • Sains Aktuaria ITS</p>
+                    <p id="summaryConsultant" class="font-bold text-brand-dark">Husnul Khotimah</p>
+                    <p id="summaryConsultantRole" class="text-[10px] text-brand-muted">Practice Lead • Sains Aktuaria ITS</p>
                   </div>
                 </div>
               </div>
@@ -543,43 +543,43 @@
     const servicesData = {
       1: {
         id: 1,
-        title: "Konsultasi Keuangan",
-        subtitle: "Financial Consulting & Solvency",
+        title: "Manajemen Risiko Terintegrasi",
+        subtitle: "Actuarial Risk Modeling & Mitigation",
         consultant: {
-          name: "Shabina Aulya Anjanie H",
-          badge: "ADVISORY LEAD",
-          role: "Konsultasi Finansial & Valuasi Solvabilitas",
-          photo: "assets/images/member-shabina-portrait.png",
-          projects: "14 Proyek Teruji",
-          trackRecord: "Dapen Freeport Indonesia • BEM ITS",
-          quote: '"Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."',
+          name: "Husnul Khotimah",
+          badge: "PRACTICE LEAD",
+          role: "Manajemen Risiko & Pemodelan Aktuaria",
+          photo: "assets/images/member-husnul-portrait.png",
+          projects: "12 Proyek Teruji",
+          trackRecord: "Kemenkeu RI • PT BIMA",
+          quote: '"Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."',
           operationalDays: "Senin – Sabtu (Minggu Libur)",
           activeDayNumbers: [1, 2, 3, 4, 5, 6],
           scheduleByDay: {
             1: {
               dayName: "Senin",
-              hours: "09:00 & 15:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             2: {
               dayName: "Selasa",
-              hours: "15:00 – 18:00 WIB",
-              slots: ["15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             3: {
               dayName: "Rabu",
-              hours: "10:00 – 18:00 WIB",
-              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             4: {
               dayName: "Kamis",
-              hours: "09:00 – 11:00 WIB",
-              slots: ["09:00 WIB", "10:00 WIB"]
+              hours: "13:00 – 15:00 WIB",
+              slots: ["13:00 WIB", "14:00 WIB"]
             },
             5: {
               dayName: "Jum'at",
-              hours: "09:00 – 10:00 & 15:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "13:30 WIB", "14:30 WIB", "15:30 WIB", "16:30 WIB"]
             },
             6: {
               dayName: "Sabtu",
@@ -687,43 +687,43 @@
       },
       4: {
         id: 4,
-        title: "Manajemen Risiko Terintegrasi",
-        subtitle: "Actuarial Risk Modeling & Mitigation",
+        title: "Konsultasi Keuangan",
+        subtitle: "Financial Consulting & Solvency",
         consultant: {
-          name: "Husnul Khotimah",
-          badge: "PRACTICE LEAD",
-          role: "Manajemen Risiko & Pemodelan Aktuaria",
-          photo: "assets/images/member-husnul-portrait.png",
-          projects: "12 Proyek Teruji",
-          trackRecord: "Kemenkeu RI • PT BIMA",
-          quote: '"Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."',
+          name: "Shabina Aulya Anjanie H",
+          badge: "ADVISORY LEAD",
+          role: "Konsultasi Finansial & Valuasi Solvabilitas",
+          photo: "assets/images/member-shabina-portrait.png",
+          projects: "14 Proyek Teruji",
+          trackRecord: "Dapen Freeport Indonesia • BEM ITS",
+          quote: '"Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."',
           operationalDays: "Senin – Sabtu (Minggu Libur)",
           activeDayNumbers: [1, 2, 3, 4, 5, 6],
           scheduleByDay: {
             1: {
               dayName: "Senin",
-              hours: "09:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "09:00 & 15:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             2: {
               dayName: "Selasa",
-              hours: "09:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "15:00 – 18:00 WIB",
+              slots: ["15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             3: {
               dayName: "Rabu",
-              hours: "09:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+              hours: "10:00 – 18:00 WIB",
+              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             4: {
               dayName: "Kamis",
-              hours: "13:00 – 15:00 WIB",
-              slots: ["13:00 WIB", "14:00 WIB"]
+              hours: "09:00 – 11:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB"]
             },
             5: {
               dayName: "Jum'at",
-              hours: "09:00 – 18:00 WIB",
-              slots: ["09:00 WIB", "10:00 WIB", "13:30 WIB", "14:30 WIB", "15:30 WIB", "16:30 WIB"]
+              hours: "09:00 – 10:00 & 15:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
             },
             6: {
               dayName: "Sabtu",
