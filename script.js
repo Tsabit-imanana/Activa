@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
         pill.type = 'button';
         pill.className = `proposal-pill text-[11px] font-mono px-2.5 py-1 border transition-all ${
           i === 0 
-            ? 'active bg-brand-primary text-white border-brand-sky font-bold' 
-            : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500 hover:text-white'
+            ? 'active bg-brand-primary text-white border-brand-primary font-bold shadow-xs' 
+            : 'bg-white text-brand-lead border-brand-border hover:border-brand-primary hover:text-brand-primary'
         }`;
         pill.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
         pill.title = pageTitles[i] || `Halaman ${i + 1}`;
@@ -287,11 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const pills = pillsContainer.querySelectorAll('.proposal-pill');
         pills.forEach((p, idx) => {
           if (idx === activePageIndex) {
-            p.classList.add('active', 'bg-brand-primary', 'text-white', 'border-brand-sky', 'font-bold');
-            p.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+            p.classList.add('active', 'bg-brand-primary', 'text-white', 'border-brand-primary', 'font-bold', 'shadow-xs');
+            p.classList.remove('bg-white', 'text-brand-lead', 'border-brand-border');
           } else {
-            p.classList.remove('active', 'bg-brand-primary', 'text-white', 'border-brand-sky', 'font-bold');
-            p.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+            p.classList.remove('active', 'bg-brand-primary', 'text-white', 'border-brand-primary', 'font-bold', 'shadow-xs');
+            p.classList.add('bg-white', 'text-brand-lead', 'border-brand-border');
           }
         });
       }
