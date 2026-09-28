@@ -131,6 +131,38 @@
       background-color: #16396B !important;
       transform: scale(1.3);
     }
+
+    /* Proposal Horizontal PDF Reader Styling */
+    .proposal-track {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    .proposal-page-card {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, box-shadow 0.35s ease;
+      will-change: transform, opacity;
+    }
+    .proposal-page-card.is-active {
+      transform: scale(1);
+      opacity: 1;
+      box-shadow: 0 25px 50px -12px rgba(8, 23, 48, 0.8);
+    }
+    .proposal-page-card:not(.is-active) {
+      transform: scale(0.95);
+      opacity: 0.65;
+    }
+    .proposal-page-card:not(.is-active):hover {
+      opacity: 0.9;
+      transform: scale(0.97);
+    }
+    .proposal-pill.active {
+      background-color: #16396B !important;
+      color: #FFFFFF !important;
+      border-color: #0EA5E9 !important;
+      font-weight: 700;
+    }
   </style>
 </head>
 
@@ -165,6 +197,7 @@
         <a href="#methodology" class="hover:text-brand-primary transition-colors py-1">Metodologi</a>
         <a href="#advisors" class="hover:text-brand-primary transition-colors py-1">Konsultan</a>
         <a href="#governance" class="hover:text-brand-primary transition-colors py-1">Tata Kelola</a>
+        <a href="#proposal" class="hover:text-brand-primary transition-colors py-1">Proposal PDF</a>
       </nav>
 
       <!-- Executive Action -->
@@ -194,6 +227,7 @@
         Konsultan</a>
       <a href="#governance" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Tata
         Kelola</a>
+      <a href="#proposal" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Proposal PDF</a>
       <a href="#contact" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Kontak Resmi</a>
       <a href="inisiasi-kerjasama.html" class="block text-brand-primary font-bold pt-2 border-t fine-border-light">Inisiasi Kerja Sama &rarr;</a>
     </div>
@@ -962,6 +996,306 @@
               melalui adendum tertulis yang disepakati bersama secara adil dan terukur.
             </p>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROPOSAL PDF INTERACTIVE READER: HORIZONTAL SCROLL & SLIDE ANIMATION
+         (Dimuat Tepat di Bawah Section Tata Kelola)
+         ========================================================================== -->
+    <section id="proposal" class="border-b fine-border py-20 lg:py-28 bg-brand-surface relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <!-- Header: Editorial Headline & Actions -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b fine-border gap-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-brand-primary font-bold">
+              Dokumen Resmi Kemitraan 2026
+            </span>
+            <h2 class="font-serif text-4xl lg:text-5xl text-brand-dark mt-2">
+              Proposal Kemitraan Strategis
+            </h2>
+            <p class="text-sm text-brand-lead mt-2 max-w-2xl leading-relaxed">
+              Dokumen institusional resmi ACTIVA Consulting — mencakup kapabilitas analitik kuantitatif, ruang lingkup penugasan, metodologi aktuaria enam tahap, serta profil tim konsultan.
+            </p>
+          </div>
+
+          <!-- Quick Actions & Download Button -->
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="proposal.pdf" download="Proposal-Kemitraan-ACTIVA-Consulting-2026.pdf"
+              class="inline-flex items-center px-4 py-2.5 text-xs font-mono tracking-wider uppercase bg-brand-primary text-white hover:bg-brand-dark transition-all duration-200 shadow-sm font-bold gap-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Unduh PDF (2.1 MB)</span>
+            </a>
+            <button id="proposalFullscreenBtn" type="button" aria-label="Buka Layar Penuh"
+              class="px-3.5 py-2.5 border fine-border bg-brand-paper text-brand-dark hover:bg-white transition-all text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+              </svg>
+              <span class="hidden sm:inline">Layar Penuh</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reader Wrapper with Control Bar -->
+        <div id="proposalReaderContainer" class="bg-[#081730] rounded-sm border border-slate-800 shadow-2xl overflow-hidden relative transition-all duration-300">
+          
+          <!-- Top Control Toolbar -->
+          <div class="px-4 sm:px-6 py-3.5 bg-brand-dark/95 border-b border-slate-800 flex flex-wrap items-center justify-between text-xs font-mono text-slate-300 gap-4">
+            
+            <!-- Left: Page status & Document Tag -->
+            <div class="flex items-center space-x-3">
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-brand-primary text-white text-[10px] uppercase font-bold tracking-wider rounded-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-sky animate-pulse"></span>
+                <span>E-Reader</span>
+              </span>
+              <span class="text-white font-bold text-xs">
+                Halaman <span id="currentPageNum" class="text-brand-sky font-bold">1</span> / 14
+              </span>
+              <span class="text-slate-500 hidden sm:inline">•</span>
+              <span class="text-slate-300 text-[11px] hidden sm:inline font-medium" id="pageTitlePreview">Sampul Depan • Proposal Kemitraan 2026</span>
+            </div>
+
+            <!-- Center: Navigation Buttons (Prev / Next) with Smooth Slide -->
+            <div class="flex items-center space-x-2">
+              <button id="proposalPrevBtn" type="button" aria-label="Halaman Sebelumnya"
+                class="px-3.5 py-1.5 bg-slate-800 hover:bg-brand-primary text-white border border-slate-700 transition-all flex items-center gap-1.5 text-xs font-bold disabled:opacity-30 disabled:cursor-not-allowed">
+                <span>&larr;</span>
+                <span class="hidden sm:inline">Sebelumnya</span>
+              </button>
+              <button id="proposalNextBtn" type="button" aria-label="Halaman Selanjutnya"
+                class="px-3.5 py-1.5 bg-slate-800 hover:bg-brand-primary text-white border border-slate-700 transition-all flex items-center gap-1.5 text-xs font-bold disabled:opacity-30 disabled:cursor-not-allowed">
+                <span class="hidden sm:inline">Selanjutnya</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Right: Keyboard & Scroll Hint -->
+            <div class="hidden lg:flex items-center space-x-2 text-[11px] text-slate-400">
+              <span>Scroll menyamping</span>
+              <span class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 text-[10px]">⇄</span>
+              <span>atau gunakan</span>
+              <span class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 text-[10px]">&larr;</span>
+              <span class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- Reading Progress Bar -->
+          <div class="w-full h-1 bg-slate-900 overflow-hidden">
+            <div id="proposalProgressBar" class="h-full bg-gradient-to-r from-brand-primary via-brand-accent to-brand-sky transition-all duration-300" style="width: 7.14%;"></div>
+          </div>
+
+          <!-- Horizontal Slide Track (The Stage) -->
+          <div class="relative py-8 sm:py-12 px-2 sm:px-6 bg-gradient-to-b from-[#081730] to-[#040C1A] flex items-center justify-center min-h-[500px] sm:min-h-[700px] overflow-hidden">
+
+            <!-- Floating Side Navigation Arrows on Desktop -->
+            <button id="floatingPrevBtn" type="button" aria-label="Halaman Sebelumnya"
+              class="hidden md:flex absolute left-4 z-20 w-11 h-11 items-center justify-center rounded-full bg-brand-dark/90 hover:bg-brand-primary text-white border border-slate-700 shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-0 disabled:pointer-events-none">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+
+            <button id="floatingNextBtn" type="button" aria-label="Halaman Selanjutnya"
+              class="hidden md:flex absolute right-4 z-20 w-11 h-11 items-center justify-center rounded-full bg-brand-dark/90 hover:bg-brand-primary text-white border border-slate-700 shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-0 disabled:pointer-events-none">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+            <!-- Horizontal Scroll Slider Track with CSS Snap & Smooth Slide -->
+            <div id="proposalSliderTrack" 
+                 class="proposal-track w-full flex items-center gap-6 sm:gap-10 overflow-x-auto py-6 px-4 snap-x snap-mandatory focus:outline-none"
+                 tabindex="0"
+                 style="scrollbar-width: thin; scrollbar-color: #16396B #081730;">
+              
+              <!-- Page 1 -->
+              <div id="proposal-page-1" data-page-index="0" class="proposal-page-card is-active flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-1.webp" alt="Halaman 1 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="eager">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 01 / 14</span>
+                  <span class="text-brand-primary font-bold">Sampul Depan</span>
+                </div>
+              </div>
+
+              <!-- Page 2 -->
+              <div id="proposal-page-2" data-page-index="1" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-2.webp" alt="Halaman 2 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="eager">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 02 / 14</span>
+                  <span class="text-brand-primary font-bold">Daftar Isi</span>
+                </div>
+              </div>
+
+              <!-- Page 3 -->
+              <div id="proposal-page-3" data-page-index="2" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-3.webp" alt="Halaman 3 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 03 / 14</span>
+                  <span class="text-brand-primary font-bold">Ringkasan Eksekutif</span>
+                </div>
+              </div>
+
+              <!-- Page 4 -->
+              <div id="proposal-page-4" data-page-index="3" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-4.webp" alt="Halaman 4 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 04 / 14</span>
+                  <span class="text-brand-primary font-bold">Latar Belakang</span>
+                </div>
+              </div>
+
+              <!-- Page 5 -->
+              <div id="proposal-page-5" data-page-index="4" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-5.webp" alt="Halaman 5 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 05 / 14</span>
+                  <span class="text-brand-primary font-bold">4 Bidang Layanan</span>
+                </div>
+              </div>
+
+              <!-- Page 6 -->
+              <div id="proposal-page-6" data-page-index="5" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-6.webp" alt="Halaman 6 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 06 / 14</span>
+                  <span class="text-brand-primary font-bold">Konsultasi Keuangan</span>
+                </div>
+              </div>
+
+              <!-- Page 7 -->
+              <div id="proposal-page-7" data-page-index="6" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-7.webp" alt="Halaman 7 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 07 / 14</span>
+                  <span class="text-brand-primary font-bold">Analisis Data</span>
+                </div>
+              </div>
+
+              <!-- Page 8 -->
+              <div id="proposal-page-8" data-page-index="7" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-8.webp" alt="Halaman 8 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 08 / 14</span>
+                  <span class="text-brand-primary font-bold">Konsultasi Investasi</span>
+                </div>
+              </div>
+
+              <!-- Page 9 -->
+              <div id="proposal-page-9" data-page-index="8" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-9.webp" alt="Halaman 9 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 09 / 14</span>
+                  <span class="text-brand-primary font-bold">Manajemen Risiko</span>
+                </div>
+              </div>
+
+              <!-- Page 10 -->
+              <div id="proposal-page-10" data-page-index="9" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-10.webp" alt="Halaman 10 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 10 / 14</span>
+                  <span class="text-brand-primary font-bold">Mekanisme Kerja</span>
+                </div>
+              </div>
+
+              <!-- Page 11 -->
+              <div id="proposal-page-11" data-page-index="10" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-11.webp" alt="Halaman 11 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 11 / 14</span>
+                  <span class="text-brand-primary font-bold">Durasi Layanan</span>
+                </div>
+              </div>
+
+              <!-- Page 12 -->
+              <div id="proposal-page-12" data-page-index="11" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-12.webp" alt="Halaman 12 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 12 / 14</span>
+                  <span class="text-brand-primary font-bold">Tata Kelola & NDA</span>
+                </div>
+              </div>
+
+              <!-- Page 13 -->
+              <div id="proposal-page-13" data-page-index="12" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-13.webp" alt="Halaman 13 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 13 / 14</span>
+                  <span class="text-brand-primary font-bold">Tim Konsultan</span>
+                </div>
+              </div>
+
+              <!-- Page 14 -->
+              <div id="proposal-page-14" data-page-index="13" class="proposal-page-card flex-shrink-0 w-[84vw] sm:w-[480px] md:w-[520px] lg:w-[560px] max-w-[580px] bg-white border border-slate-700 shadow-2xl relative select-none">
+                <div class="aspect-[1/1.414] overflow-hidden bg-slate-900 relative">
+                  <img src="assets/proposal/page-14.webp" alt="Halaman 14 Proposal ACTIVA" class="w-full h-full object-contain pointer-events-none" loading="lazy">
+                </div>
+                <div class="p-2.5 bg-brand-surface border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted">
+                  <span class="font-bold text-brand-dark">Halaman 14 / 14</span>
+                  <span class="text-brand-primary font-bold">Lembar Pengesahan</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Thumbnail / Quick Page Jump Pills -->
+          <div class="px-4 sm:px-6 py-4 bg-brand-dark/95 border-t border-slate-800">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <span class="text-[11px] font-mono text-slate-400">Pilih Halaman Cepat:</span>
+              <div id="proposalPagePills" class="flex flex-wrap items-center justify-center gap-1.5 max-w-full">
+                <!-- 14 page pills dynamically linked -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footnote & Action Banner -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-brand-muted gap-4">
+          <p>
+            ℹ️ Ingin mencetak atau mendistribusikan proposal lengkap ini secara offline? 
+            <a href="proposal.pdf" download="Proposal-Kemitraan-ACTIVA-Consulting-2026.pdf" class="text-brand-primary font-bold underline hover:text-brand-dark">
+              Unduh salinan resmi dokumen PDF (2.1 MB)
+            </a>.
+          </p>
+          <a href="inisiasi-kerjasama.html" class="inline-flex items-center space-x-1.5 text-brand-primary font-bold uppercase tracking-wider hover:text-brand-dark transition-colors">
+            <span>Inisiasi Kerja Sama Sekarang</span>
+            <span>&rarr;</span>
+          </a>
         </div>
 
       </div>

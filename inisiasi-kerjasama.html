@@ -309,15 +309,17 @@
                 <div class="p-4 bg-brand-paper border fine-border space-y-2.5 font-mono text-xs">
                   <div class="flex items-center justify-between border-b fine-border-light pb-2">
                     <span class="text-brand-muted uppercase text-[10px] font-bold">Hari Konsultasi:</span>
-                    <span id="consultantDays" class="text-brand-dark font-bold text-xs bg-white px-2 py-0.5 border fine-border">Senin, Rabu, & Jumat</span>
+                    <span id="consultantDays" class="text-brand-dark font-bold text-xs bg-white px-2 py-0.5 border fine-border">Senin – Sabtu (Minggu Libur)</span>
                   </div>
                   <div class="flex items-center justify-between border-b fine-border-light pb-2">
-                    <span class="text-brand-muted uppercase text-[10px] font-bold">Rentang Jam:</span>
-                    <span id="consultantHours" class="text-brand-dark font-bold text-xs">09:00 – 16:30 WIB</span>
-                  </div>
-                  <div class="flex items-center justify-between">
                     <span class="text-brand-muted uppercase text-[10px] font-bold">Format Sesi:</span>
                     <span class="text-brand-primary font-bold text-xs">Online / Hybrid (60 Menit)</span>
+                  </div>
+                  <div class="pt-1">
+                    <span class="text-brand-muted uppercase text-[10px] font-bold block mb-1.5">Jadwal Operasional Harian:</span>
+                    <div id="consultantWeeklyGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-[11px]">
+                      <!-- Rendered by JS -->
+                    </div>
                   </div>
                 </div>
 
@@ -536,7 +538,7 @@
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
     // ---------------------------------------------------------
-    // 1. DATA MASTER 4 BIDANG LAYANAN & MEMBER UNIK
+    // 1. DATA MASTER 4 BIDANG LAYANAN & JADWAL OPERASIONAL HARIAN
     // ---------------------------------------------------------
     const servicesData = {
       1: {
@@ -551,10 +553,40 @@
           projects: "14 Proyek Teruji",
           trackRecord: "Dapen Freeport Indonesia • BEM ITS",
           quote: '"Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."',
-          operationalDays: "Senin, Rabu, & Jumat",
-          activeDayNumbers: [1, 3, 5], // 1=Mon, 3=Wed, 5=Fri
-          hoursRange: "09:00 – 16:30 WIB",
-          timeSlots: ["09:00 WIB", "10:30 WIB", "13:30 WIB", "15:00 WIB"]
+          operationalDays: "Senin – Sabtu (Minggu Libur)",
+          activeDayNumbers: [1, 2, 3, 4, 5, 6],
+          scheduleByDay: {
+            1: {
+              dayName: "Senin",
+              hours: "09:00 & 15:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            2: {
+              dayName: "Selasa",
+              hours: "15:00 – 18:00 WIB",
+              slots: ["15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            3: {
+              dayName: "Rabu",
+              hours: "10:00 – 18:00 WIB",
+              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            4: {
+              dayName: "Kamis",
+              hours: "09:00 – 11:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB"]
+            },
+            5: {
+              dayName: "Jum'at",
+              hours: "09:00 – 10:00 & 15:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            6: {
+              dayName: "Sabtu",
+              hours: "10:00 – 16:00 WIB",
+              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB"]
+            }
+          }
         }
       },
       2: {
@@ -569,10 +601,40 @@
           projects: "14 Proyek Teruji",
           trackRecord: "Pelindo • PT BIMA",
           quote: '"Mengubah tumpukan big data operasional dan keuangan menjadi arsitektur visual dashboard intelijen bisnis yang prediktif dan aplikatif."',
-          operationalDays: "Selasa, Kamis, & Sabtu",
-          activeDayNumbers: [2, 4, 6], // 2=Tue, 4=Thu, 6=Sat
-          hoursRange: "10:00 – 17:00 WIB",
-          timeSlots: ["10:00 WIB", "11:30 WIB", "14:00 WIB", "15:30 WIB"]
+          operationalDays: "Senin – Sabtu (Minggu Libur)",
+          activeDayNumbers: [1, 2, 3, 4, 5, 6],
+          scheduleByDay: {
+            1: {
+              dayName: "Senin",
+              hours: "16:00 – 18:00 WIB",
+              slots: ["16:00 WIB", "17:00 WIB"]
+            },
+            2: {
+              dayName: "Selasa",
+              hours: "13:00 – 18:00 WIB",
+              slots: ["13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            3: {
+              dayName: "Rabu",
+              hours: "15:00 – 18:00 WIB",
+              slots: ["15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            4: {
+              dayName: "Kamis",
+              hours: "13:00 – 18:00 WIB",
+              slots: ["13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            5: {
+              dayName: "Jum'at",
+              hours: "13:00 – 18:00 WIB",
+              slots: ["13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            6: {
+              dayName: "Sabtu",
+              hours: "11:00 – 16:00 WIB",
+              slots: ["11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB"]
+            }
+          }
         }
       },
       3: {
@@ -587,10 +649,40 @@
           projects: "9 Proyek Teruji",
           trackRecord: "Dapen Telkom Bandung • BPJS",
           quote: '"Optimalisasi alokasi instrumen pendapatan tetap dan cash flow matching untuk menjamin ketahanan pemenuhan liabilitas jangka panjang."',
-          operationalDays: "Senin, Selasa, & Kamis",
-          activeDayNumbers: [1, 2, 4], // 1=Mon, 2=Tue, 4=Thu
-          hoursRange: "08:30 – 16:00 WIB",
-          timeSlots: ["08:30 WIB", "10:00 WIB", "13:00 WIB", "14:30 WIB"]
+          operationalDays: "Senin – Sabtu (Minggu Libur)",
+          activeDayNumbers: [1, 2, 3, 4, 5, 6],
+          scheduleByDay: {
+            1: {
+              dayName: "Senin",
+              hours: "16:00 – 18:00 WIB",
+              slots: ["16:00 WIB", "17:00 WIB"]
+            },
+            2: {
+              dayName: "Selasa",
+              hours: "09:00 – 11:00 & 16:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            3: {
+              dayName: "Rabu",
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            4: {
+              dayName: "Kamis",
+              hours: "16:00 – 18:00 WIB",
+              slots: ["16:00 WIB", "17:00 WIB"]
+            },
+            5: {
+              dayName: "Jum'at",
+              hours: "14:00 – 18:00 WIB",
+              slots: ["14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            6: {
+              dayName: "Sabtu",
+              hours: "10:00 – 16:00 WIB",
+              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB"]
+            }
+          }
         }
       },
       4: {
@@ -605,10 +697,40 @@
           projects: "12 Proyek Teruji",
           trackRecord: "Kemenkeu RI • PT BIMA",
           quote: '"Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."',
-          operationalDays: "Rabu, Kamis, & Jumat",
-          activeDayNumbers: [3, 4, 5], // 3=Wed, 4=Thu, 5=Fri
-          hoursRange: "09:30 – 17:00 WIB",
-          timeSlots: ["09:30 WIB", "11:00 WIB", "14:00 WIB", "15:30 WIB"]
+          operationalDays: "Senin – Sabtu (Minggu Libur)",
+          activeDayNumbers: [1, 2, 3, 4, 5, 6],
+          scheduleByDay: {
+            1: {
+              dayName: "Senin",
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            2: {
+              dayName: "Selasa",
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            3: {
+              dayName: "Rabu",
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB", "16:00 WIB", "17:00 WIB"]
+            },
+            4: {
+              dayName: "Kamis",
+              hours: "13:00 – 15:00 WIB",
+              slots: ["13:00 WIB", "14:00 WIB"]
+            },
+            5: {
+              dayName: "Jum'at",
+              hours: "09:00 – 18:00 WIB",
+              slots: ["09:00 WIB", "10:00 WIB", "13:30 WIB", "14:30 WIB", "15:30 WIB", "16:30 WIB"]
+            },
+            6: {
+              dayName: "Sabtu",
+              hours: "10:00 – 16:00 WIB",
+              slots: ["10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB", "15:00 WIB"]
+            }
+          }
         }
       }
     };
@@ -701,19 +823,33 @@
       document.getElementById("consultantRole").textContent = data.consultant.role;
       document.getElementById("consultantQuote").textContent = data.consultant.quote;
       document.getElementById("consultantDays").textContent = data.consultant.operationalDays;
-      document.getElementById("consultantHours").textContent = data.consultant.hoursRange;
       document.getElementById("consultantTrackRecord").textContent = data.consultant.trackRecord;
 
-      // Render Time Slots (Step 3)
-      renderTimeSlots(data.consultant.timeSlots);
+      // Check current day of week if date already selected
+      let currentDayOfWeek = 0;
+      const currentDateVal = document.getElementById("consultationDate").value;
+      if (currentDateVal) {
+        const parts = currentDateVal.split("-");
+        const dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        currentDayOfWeek = dateObj.getDay();
+      }
+
+      // Render the weekly schedule breakdown
+      renderWeeklySchedule(data.consultant.scheduleByDay, currentDayOfWeek);
 
       // Render Quick Date Pills based on consultant's operational days
       renderDateQuickPills(data.consultant.activeDayNumbers);
 
-      // Re-validate current date if already filled
-      const currentDateVal = document.getElementById("consultationDate").value;
+      // Re-evaluate date and time slots
       if (currentDateVal) {
         onDateSelected(currentDateVal);
+      } else {
+        const container = document.getElementById("timeSlotsContainer");
+        container.innerHTML = `
+          <div class="col-span-2 sm:col-span-4 p-4 bg-brand-paper border fine-border text-brand-muted text-xs font-mono text-center">
+            📅 Silakan pilih tanggal pada input di atas untuk menampilkan slot jam yang tersedia.
+          </div>
+        `;
       }
 
       // Update Live Summary
@@ -721,21 +857,69 @@
     }
 
     // ---------------------------------------------------------
-    // 4. TIME SLOTS GENERATION & SELECTION
+    // 4. WEEKLY SCHEDULE GRID RENDERER
+    // ---------------------------------------------------------
+    function renderWeeklySchedule(scheduleByDay, currentDayOfWeek) {
+      const container = document.getElementById("consultantWeeklyGrid");
+      if (!container) return;
+      container.innerHTML = "";
+
+      for (let dayNum = 1; dayNum <= 6; dayNum++) {
+        const item = scheduleByDay[dayNum];
+        if (!item) continue;
+        const isCurrent = currentDayOfWeek === dayNum;
+        const card = document.createElement("div");
+        card.className = `p-2 border transition-all ${
+          isCurrent 
+            ? 'bg-brand-primary text-white border-brand-sky shadow-sm' 
+            : 'bg-white border-brand-border text-brand-dark'
+        }`;
+        card.innerHTML = `
+          <div class="flex items-center justify-between font-bold text-[10px] ${isCurrent ? 'text-brand-sky' : 'text-brand-primary'}">
+            <span>${item.dayName}</span>
+            ${isCurrent ? '<span class="text-[9px] bg-white/20 px-1 font-mono">Aktif</span>' : ''}
+          </div>
+          <div class="text-[10px] leading-tight mt-1 ${isCurrent ? 'text-white' : 'text-brand-lead'} font-medium">
+            ${item.hours}
+          </div>
+        `;
+        container.appendChild(card);
+      }
+    }
+
+    // ---------------------------------------------------------
+    // 5. TIME SLOTS GENERATION & SELECTION
     // ---------------------------------------------------------
     function renderTimeSlots(slots) {
       const container = document.getElementById("timeSlotsContainer");
       container.innerHTML = "";
+      
+      const previousSlot = selectedSlotString;
       selectedSlotString = "";
       document.getElementById("selectedTimeSlot").value = "";
+
+      if (!slots || slots.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-2 sm:col-span-4 p-4 bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono text-center">
+            Tidak ada slot jam konsultasi pada hari ini. Silakan pilih tanggal lain.
+          </div>
+        `;
+        return;
+      }
 
       slots.forEach(slot => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "slot-chip p-3 text-xs font-mono border fine-border bg-white text-brand-dark rounded-none text-center font-bold";
+        const isPreserved = (slot === previousSlot);
+        btn.className = `slot-chip p-3 text-xs font-mono border fine-border bg-white text-brand-dark rounded-none text-center font-bold ${isPreserved ? 'active' : ''}`;
         btn.innerHTML = `<span>${slot}</span>`;
         btn.onclick = () => selectTimeSlot(slot, btn);
         container.appendChild(btn);
+
+        if (isPreserved) {
+          selectedSlotString = slot;
+          document.getElementById("selectedTimeSlot").value = slot;
+        }
       });
     }
 
@@ -752,7 +936,7 @@
     }
 
     // ---------------------------------------------------------
-    // 5. QUICK DATE RECOMMENDATION PILLS
+    // 6. QUICK DATE RECOMMENDATION PILLS
     // ---------------------------------------------------------
     function renderDateQuickPills(activeDayNumbers) {
       const pillsContainer = document.getElementById("dateQuickPills");
@@ -792,11 +976,21 @@
     }
 
     // ---------------------------------------------------------
-    // 6. DATE INPUT HANDLER & DAY VERIFICATION
+    // 7. DATE INPUT HANDLER & DAY VERIFICATION
     // ---------------------------------------------------------
     function onDateSelected(dateValue) {
       if (!dateValue) {
         selectedDateString = "";
+        const noticeBox = document.getElementById("dateNotice");
+        noticeBox.classList.add("hidden");
+        const container = document.getElementById("timeSlotsContainer");
+        container.innerHTML = `
+          <div class="col-span-2 sm:col-span-4 p-4 bg-brand-paper border fine-border text-brand-muted text-xs font-mono text-center">
+            📅 Silakan pilih tanggal pada input di atas untuk menampilkan slot jam yang tersedia.
+          </div>
+        `;
+        selectedSlotString = "";
+        document.getElementById("selectedTimeSlot").value = "";
         updateSummary();
         return;
       }
@@ -812,30 +1006,44 @@
       const monthName = indonesianMonths[month];
       const formattedDate = `${dayName}, ${day} ${monthName} ${year}`;
 
-      const activeDays = servicesData[currentServiceId].consultant.activeDayNumbers;
-      const consultantDaysText = servicesData[currentServiceId].consultant.operationalDays;
-      const consultantName = servicesData[currentServiceId].consultant.name;
+      const consultant = servicesData[currentServiceId].consultant;
       const noticeBox = document.getElementById("dateNotice");
 
-      if (activeDays.includes(dayOfWeek)) {
-        // Valid operating day
-        selectedDateString = formattedDate;
-        noticeBox.className = "text-xs font-mono p-3 border border-emerald-200 bg-emerald-50 text-emerald-800";
-        noticeBox.innerHTML = `✓ <strong>Jadwal Cocok:</strong> ${consultantName} beroperasi pada hari <strong>${dayName}</strong>.`;
-        noticeBox.classList.remove("hidden");
-      } else {
-        // Not an operating day
-        selectedDateString = `${formattedDate} (Perlu Penyesuaian Jadwal)`;
+      // Update weekly schedule highlight
+      renderWeeklySchedule(consultant.scheduleByDay, dayOfWeek);
+
+      if (dayOfWeek === 0) {
+        // Sunday (Libur)
+        selectedDateString = `${formattedDate} (Minggu Libur)`;
         noticeBox.className = "text-xs font-mono p-3 border border-amber-300 bg-amber-50 text-amber-900";
-        noticeBox.innerHTML = `⚠️ <strong>Pemberitahuan Jadwal:</strong> ${consultantName} reguler beroperasi pada hari <strong>${consultantDaysText}</strong>. Anda tetap dapat melanjutkan pengajuan, tim kami akan mengonfirmasi penyesuaian via WhatsApp.`;
+        noticeBox.innerHTML = `⚠️ <strong>Pemberitahuan Hari Libur:</strong> ${consultant.name} tidak beroperasi pada hari <strong>Minggu</strong>. Silakan pilih hari <strong>Senin s/d Sabtu</strong> pada kalender atau klik tombol rekomendasi tanggal di atas.`;
         noticeBox.classList.remove("hidden");
+
+        const container = document.getElementById("timeSlotsContainer");
+        container.innerHTML = `
+          <div class="col-span-2 sm:col-span-4 p-4 bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono text-center">
+            ⚠️ Tidak ada slot jam konsultasi pada hari Minggu. Silakan pilih tanggal antara hari Senin hingga Sabtu.
+          </div>
+        `;
+        selectedSlotString = "";
+        document.getElementById("selectedTimeSlot").value = "";
+      } else {
+        // Monday - Saturday
+        const daySchedule = consultant.scheduleByDay[dayOfWeek];
+        selectedDateString = formattedDate;
+
+        noticeBox.className = "text-xs font-mono p-3 border border-emerald-200 bg-emerald-50 text-emerald-800";
+        noticeBox.innerHTML = `✓ <strong>Jadwal Tersedia (${dayName}):</strong> Jam operasional <strong>${daySchedule.hours}</strong>. Silakan pilih slot jam konsultasi di bawah:`;
+        noticeBox.classList.remove("hidden");
+
+        renderTimeSlots(daySchedule.slots);
       }
 
       updateSummary();
     }
 
     // ---------------------------------------------------------
-    // 7. LIVE RECEIPT & SUMMARY UPDATER
+    // 8. LIVE RECEIPT & SUMMARY UPDATER
     // ---------------------------------------------------------
     function updateSummary() {
       const data = servicesData[currentServiceId];
@@ -858,7 +1066,7 @@
     }
 
     // ---------------------------------------------------------
-    // 8. FORM SUBMIT & WHATSAPP REDIRECTION
+    // 9. FORM SUBMIT & WHATSAPP REDIRECTION
     // ---------------------------------------------------------
     function handleFormSubmit() {
       const nameInput = document.getElementById("clientName");
@@ -890,6 +1098,14 @@
 
       if (!dateInput.value) {
         alert("Harap pilih tanggal konsultasi terlebih dahulu.");
+        dateInput.focus();
+        return;
+      }
+
+      const parts = dateInput.value.split("-");
+      const dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+      if (dateObj.getDay() === 0) {
+        alert("Konsultan tidak beroperasi pada hari Minggu. Harap pilih hari Senin s/d Sabtu.");
         dateInput.focus();
         return;
       }

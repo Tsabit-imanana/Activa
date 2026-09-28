@@ -190,4 +190,230 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
+  // ==========================================================================
+  // 7. Interactive Proposal PDF Horizontal Reader & Slide Animation
+  // ==========================================================================
+  const proposalTrack = document.getElementById('proposalSliderTrack');
+  const proposalCards = document.querySelectorAll('.proposal-page-card');
+  const prevBtn = document.getElementById('proposalPrevBtn');
+  const nextBtn = document.getElementById('proposalNextBtn');
+  const floatPrevBtn = document.getElementById('floatingPrevBtn');
+  const floatNextBtn = document.getElementById('floatingNextBtn');
+  const currentPageDisplay = document.getElementById('currentPageNum');
+  const pageTitleDisplay = document.getElementById('pageTitlePreview');
+  const progressBar = document.getElementById('proposalProgressBar');
+  const pillsContainer = document.getElementById('proposalPagePills');
+  const fullscreenBtn = document.getElementById('proposalFullscreenBtn');
+  const readerContainer = document.getElementById('proposalReaderContainer');
+
+  if (proposalTrack && proposalCards.length > 0) {
+    const totalPages = proposalCards.length;
+    let activePageIndex = 0;
+    let isUserScrolling = false;
+    let scrollTimeout = null;
+
+    const pageTitles = [
+      "Sampul Depan • Proposal Kemitraan 2026",
+      "Daftar Isi & Struktur Dokumen Proposal",
+      "Ringkasan Eksekutif & Identitas ACTIVA ITS",
+      "Latar Belakang & Visi-Misi Kemitraan",
+      "Empat Bidang Layanan Konsultasi Utama",
+      "Layanan 01: Konsultasi Keuangan & Solvabilitas",
+      "Layanan 02: Analisis Data Kuantitatif & Visualisasi",
+      "Layanan 03: Konsultasi Investasi & Portofolio",
+      "Layanan 04: Manajemen Risiko Terintegrasi",
+      "Mekanisme & Metodologi Kerja Enam Tahap",
+      "Estimasi Timeline & Durasi Pelaksanaan Proyek",
+      "Tata Kelola, Kerahasiaan (NDA) & Etika",
+      "Profil Konsultan & Rekam Jejak Penugasan",
+      "Penutup, Pengesahan & Saluran Resmi"
+    ];
+
+    // Generate Page Pills
+    if (pillsContainer) {
+      pillsContainer.innerHTML = '';
+      for (let i = 0; i < totalPages; i++) {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = `proposal-pill text-[11px] font-mono px-2.5 py-1 border transition-all ${
+          i === 0 
+            ? 'active bg-brand-primary text-white border-brand-sky font-bold' 
+            : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500 hover:text-white'
+        }`;
+        pill.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+        pill.title = pageTitles[i] || `Halaman ${i + 1}`;
+        pill.onclick = () => scrollToPage(i);
+        pillsContainer.appendChild(pill);
+      }
+    }
+
+    function updateReaderUI(index) {
+      activePageIndex = Math.max(0, Math.min(totalPages - 1, index));
+
+      // Update text indicators
+      if (currentPageDisplay) {
+        currentPageDisplay.textContent = activePageIndex + 1;
+      }
+      if (pageTitleDisplay) {
+        pageTitleDisplay.textContent = pageTitles[activePageIndex] || `Halaman ${activePageIndex + 1}`;
+      }
+
+      // Update progress bar
+      if (progressBar) {
+        const progressPercent = ((activePageIndex + 1) / totalPages) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+      }
+
+      // Update Button states
+      const isFirst = activePageIndex === 0;
+      const isLast = activePageIndex === totalPages - 1;
+
+      if (prevBtn) prevBtn.disabled = isFirst;
+      if (nextBtn) nextBtn.disabled = isLast;
+      if (floatPrevBtn) floatPrevBtn.disabled = isFirst;
+      if (floatNextBtn) floatNextBtn.disabled = isLast;
+
+      // Update active card styling
+      proposalCards.forEach((card, idx) => {
+        if (idx === activePageIndex) {
+          card.classList.add('is-active');
+        } else {
+          card.classList.remove('is-active');
+        }
+      });
+
+      // Update pills
+      if (pillsContainer) {
+        const pills = pillsContainer.querySelectorAll('.proposal-pill');
+        pills.forEach((p, idx) => {
+          if (idx === activePageIndex) {
+            p.classList.add('active', 'bg-brand-primary', 'text-white', 'border-brand-sky', 'font-bold');
+            p.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+          } else {
+            p.classList.remove('active', 'bg-brand-primary', 'text-white', 'border-brand-sky', 'font-bold');
+            p.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+          }
+        });
+      }
+    }
+
+    function scrollToPage(index) {
+      if (index < 0 || index >= totalPages) return;
+      const targetCard = proposalCards[index];
+      if (!targetCard) return;
+
+      isUserScrolling = true;
+      const scrollOffset = targetCard.offsetLeft - proposalTrack.offsetLeft - (proposalTrack.clientWidth - targetCard.clientWidth) / 2;
+
+      proposalTrack.scrollTo({
+        left: scrollOffset,
+        behavior: 'smooth'
+      });
+
+      updateReaderUI(index);
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isUserScrolling = false;
+      }, 500);
+    }
+
+    // Prev / Next button clicks
+    function goPrev() {
+      if (activePageIndex > 0) {
+        scrollToPage(activePageIndex - 1);
+      }
+    }
+    function goNext() {
+      if (activePageIndex < totalPages - 1) {
+        scrollToPage(activePageIndex + 1);
+      }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', goPrev);
+    if (nextBtn) nextBtn.addEventListener('click', goNext);
+    if (floatPrevBtn) floatPrevBtn.addEventListener('click', goPrev);
+    if (floatNextBtn) floatNextBtn.addEventListener('click', goNext);
+
+    // Track scroll event to detect current page in center
+    proposalTrack.addEventListener('scroll', () => {
+      if (isUserScrolling) return;
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const trackCenter = proposalTrack.scrollLeft + proposalTrack.clientWidth / 2;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+
+        proposalCards.forEach((card, idx) => {
+          const cardCenter = card.offsetLeft - proposalTrack.offsetLeft + card.clientWidth / 2;
+          const diff = Math.abs(trackCenter - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = idx;
+          }
+        });
+
+        if (closestIndex !== activePageIndex) {
+          updateReaderUI(closestIndex);
+        }
+      }, 60);
+    }, { passive: true });
+
+    // Wheel event to scroll horizontally when over the reader
+    proposalTrack.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        proposalTrack.scrollLeft += e.deltaY * 1.5;
+      }
+    }, { passive: false });
+
+    // Keyboard navigation (Arrow keys)
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+
+      const rect = proposalTrack.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (inView) {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goNext();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goPrev();
+        }
+      }
+    });
+
+    // Fullscreen toggle
+    if (fullscreenBtn && readerContainer) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          if (readerContainer.requestFullscreen) {
+            readerContainer.requestFullscreen();
+          } else if (readerContainer.webkitRequestFullscreen) {
+            readerContainer.webkitRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
+
+      document.addEventListener('fullscreenchange', () => {
+        const isFull = !!document.fullscreenElement;
+        const iconSpan = fullscreenBtn.querySelector('span');
+        if (iconSpan) {
+          iconSpan.textContent = isFull ? 'Tutup Penuh' : 'Layar Penuh';
+        }
+      });
+    }
+
+    // Initialize UI on load
+    updateReaderUI(0);
+  }
+
 });
+
