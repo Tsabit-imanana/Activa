@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inisiasi Kerja Sama & Booking Konsultasi | ACTIVA Consulting</title>
+  <meta name="description"
+    content="Formulir inisiasi kerja sama dan reservasi sesi konsultasi aktuaria, manajemen risiko, analisis data, dan strategi investasi bersama tim konsultan ACTIVA Consulting ITS Surabaya.">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts: Editorial Serif + Clean Sans + Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              paper: '#F2F6FB',
+              surface: '#FFFFFF',
+              dark: '#0E254A',
+              deep: '#081730',
+              lead: '#334155',
+              muted: '#64748B',
+              border: '#D3E0EE',
+              borderFine: '#E2EAF2',
+              primary: '#16396B',
+              accent: '#0088CC',
+              sky: '#0EA5E9',
+              lightBlue: '#E6F0FA'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F2F6FB;
+      color: #0E254A;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fine-border {
+      border-color: #D3E0EE;
+    }
+
+    .fine-border-light {
+      border-color: #E2EAF2;
+    }
+
+    ::selection {
+      background-color: #16396B;
+      color: #FFFFFF;
+    }
+
+    /* Service card radio styling */
+    .service-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card.selected {
+      border-color: #16396B;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 20px -2px rgba(22, 57, 107, 0.12);
+    }
+
+    .service-card:not(.selected):hover {
+      border-color: #94A3B8;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Time slot pills */
+    .slot-chip {
+      transition: all 0.2s ease;
+    }
+
+    .slot-chip.active {
+      background-color: #16396B;
+      color: #FFFFFF;
+      border-color: #16396B;
+      box-shadow: 0 2px 8px rgba(22, 57, 107, 0.25);
+    }
+
+    .slot-chip:not(.active):hover {
+      border-color: #16396B;
+      color: #16396B;
+      background-color: #FFFFFF;
+    }
+
+    /* Custom input styling */
+    .form-input {
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: #16396B;
+      box-shadow: 0 0 0 3px rgba(22, 57, 107, 0.1);
+      outline: none;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-brand-lead bg-brand-paper min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== EXECUTIVE HEADER ==================== -->
+  <header class="border-b fine-border bg-brand-paper/95 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3.5 group">
+        <img src="logo.png" alt="ACTIVA Consulting Logo" class="h-9 w-auto object-contain">
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors leading-none">ACTIVA</span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">Consulting / ITS</span>
+        </div>
+      </a>
+
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-xs font-mono tracking-wider uppercase text-brand-primary hover:text-brand-dark flex items-center space-x-2 font-bold py-2 px-3 border fine-border bg-white hover:bg-brand-surface transition-all">
+          <span>&larr;</span>
+          <span>Kembali ke Beranda</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN BOOKING CONTAINER ==================== -->
+  <main class="py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <!-- Breadcrumb & Header Title -->
+      <div class="max-w-3xl mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-primary mb-3">
+          <span>Prosedur Inisiasi Kemitraan</span>
+          <span class="text-brand-muted">•</span>
+          <span>Sains Aktuaria ITS Surabaya</span>
+        </div>
+        <h1 class="font-serif text-4xl sm:text-5xl text-brand-dark tracking-tight leading-tight">
+          Formulir Penjadwalan Sesi Konsultasi & Kerja Sama
+        </h1>
+        <p class="text-sm text-brand-lead mt-3 leading-relaxed">
+          Pilih salah satu dari empat bidang layanan utama di bawah. Sistem akan mencocokkan sesi Anda dengan konsultan penanggung jawab serta jadwal operasional spesifik yang tersedia.
+        </p>
+      </div>
+
+      <!-- Main Layout: 2 Columns (Form Fields & Sticky Live Summary) -->
+      <form id="consultationForm" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start" onsubmit="event.preventDefault(); handleFormSubmit();">
+        
+        <!-- Left Column: Form Steps (7 Cols) -->
+        <div class="lg:col-span-7 space-y-10">
+
+          <!-- ==================== STEP 1: PILIH LAYANAN ==================== -->
+          <div class="bg-brand-surface border fine-border p-6 sm:p-8 space-y-6 shadow-sm">
+            <div class="flex items-center justify-between border-b fine-border-light pb-4">
+              <div class="space-y-1">
+                <span class="font-mono text-xs font-bold text-brand-primary tracking-widest uppercase">Langkah 01 / 04</span>
+                <h2 class="text-xl font-bold text-brand-dark">Pilih Bidang Layanan Utama</h2>
+              </div>
+              <span class="text-xs font-mono text-brand-muted">Wajib Dipilih *</span>
+            </div>
+
+            <!-- Service Selection Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="serviceOptionsContainer">
+              
+              <!-- Layanan 01: Konsultasi Keuangan -->
+              <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between selected" data-service-id="1">
+                <input type="radio" name="service" value="1" class="sr-only" checked onchange="onServiceChange(1)">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-mono text-xs font-bold text-brand-primary">01 /</span>
+                    <span class="radio-indicator w-4 h-4 rounded-full border-2 border-brand-primary flex items-center justify-center">
+                      <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Konsultasi Keuangan</h3>
+                  <p class="font-mono text-[10px] uppercase text-brand-muted mt-0.5">Financial Consulting & Solvency</p>
+                  <p class="text-xs text-brand-lead mt-3 leading-relaxed">
+                    Evaluasi kesehatan rasio keuangan korporat, valuasi solvabilitas, likuiditas, dan proyeksi arus kas.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
+                  <span>Konsultan:</span>
+                  <span class="text-brand-dark font-medium">Shabina Aulya</span>
+                </div>
+              </label>
+
+              <!-- Layanan 02: Analisis Data & Visualisasi -->
+              <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="2">
+                <input type="radio" name="service" value="2" class="sr-only" onchange="onServiceChange(2)">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-mono text-xs font-bold text-brand-primary">02 /</span>
+                    <span class="radio-indicator w-4 h-4 rounded-full border-2 border-brand-border flex items-center justify-center">
+                      <span class="w-2 h-2 rounded-full bg-transparent"></span>
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Analisis Data & Visualisasi</h3>
+                  <p class="font-mono text-[10px] uppercase text-brand-muted mt-0.5">Predictive Analytics & Dashboards</p>
+                  <p class="text-xs text-brand-lead mt-3 leading-relaxed">
+                    Infrastruktur pemantauan data operasional ke dalam arsitektur dashboard eksekutif BI yang prediktif.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
+                  <span>Konsultan:</span>
+                  <span class="text-brand-dark font-medium">Szunir Laura H</span>
+                </div>
+              </label>
+
+              <!-- Layanan 03: Konsultasi Investasi -->
+              <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="3">
+                <input type="radio" name="service" value="3" class="sr-only" onchange="onServiceChange(3)">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-mono text-xs font-bold text-brand-primary">03 /</span>
+                    <span class="radio-indicator w-4 h-4 rounded-full border-2 border-brand-border flex items-center justify-center">
+                      <span class="w-2 h-2 rounded-full bg-transparent"></span>
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Konsultasi Investasi</h3>
+                  <p class="font-mono text-[10px] uppercase text-brand-muted mt-0.5">Portfolio Viability & Feasibility</p>
+                  <p class="text-xs text-brand-lead mt-3 leading-relaxed">
+                    Kajian kelayakan penempatan modal (FS), risk-adjusted return, dan optimalisasi alokasi aset portofolio.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
+                  <span>Konsultan:</span>
+                  <span class="text-brand-dark font-medium">Bernadeta Andrea</span>
+                </div>
+              </label>
+
+              <!-- Layanan 04: Manajemen Risiko Terintegrasi -->
+              <label class="service-card cursor-pointer border fine-border p-5 relative flex flex-col justify-between" data-service-id="4">
+                <input type="radio" name="service" value="4" class="sr-only" onchange="onServiceChange(4)">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-mono text-xs font-bold text-brand-primary">04 /</span>
+                    <span class="radio-indicator w-4 h-4 rounded-full border-2 border-brand-border flex items-center justify-center">
+                      <span class="w-2 h-2 rounded-full bg-transparent"></span>
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-dark leading-snug">Manajemen Risiko Terintegrasi</h3>
+                  <p class="font-mono text-xs uppercase text-brand-muted mt-0.5">Actuarial Risk & Mitigation</p>
+                  <p class="text-xs text-brand-lead mt-3 leading-relaxed">
+                    Stress-testing aktuaria, pemodelan probabilitas kerugian ekstrem (VaR), dan protokol mitigasi preventif.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t fine-border-light text-[11px] font-mono text-brand-primary font-bold flex items-center justify-between">
+                  <span>Konsultan:</span>
+                  <span class="text-brand-dark font-medium">Husnul Khotimah</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- ==================== STEP 2: MEMBER PROFILE CARD ==================== -->
+          <div class="bg-brand-surface border fine-border p-6 sm:p-8 space-y-6 shadow-sm">
+            <div class="flex items-center justify-between border-b fine-border-light pb-4">
+              <div class="space-y-1">
+                <span class="font-mono text-xs font-bold text-brand-primary tracking-widest uppercase">Langkah 02 / 04</span>
+                <h2 class="text-xl font-bold text-brand-dark">Profil Konsultan Bertugas & Jam Operasional</h2>
+              </div>
+              <span class="text-xs font-mono text-brand-muted">Otomatis Terhubung</span>
+            </div>
+
+            <!-- Dynamic Consultant Info Panel -->
+            <div id="consultantProfileCard" class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              
+              <!-- Consultant Avatar -->
+              <div class="md:col-span-4">
+                <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative shadow-inner">
+                  <img id="consultantPhoto" src="assets/images/member-shabina-portrait.png" alt="Konsultan Bertugas" class="w-full h-full object-cover">
+                </div>
+                <div class="p-2 bg-brand-paper border-t fine-border text-center mt-1 text-[11px] font-mono text-brand-muted">
+                  <span id="consultantProjectsBadge" class="font-bold text-brand-primary">14 Proyek Teruji</span>
+                </div>
+              </div>
+
+              <!-- Consultant Details -->
+              <div class="md:col-span-8 space-y-4">
+                <div>
+                  <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-brand-primary font-bold tracking-wider uppercase mb-1">
+                    <span id="consultantBadge">ADVISORY LEAD</span>
+                    <span>•</span>
+                    <span>SAINS AKTUARIA ITS</span>
+                  </div>
+                  <h3 id="consultantName" class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">Shabina Aulya Anjanie H</h3>
+                  <p id="consultantRole" class="font-mono text-xs text-brand-muted mt-0.5">Konsultasi Finansial & Valuasi Solvabilitas</p>
+                </div>
+
+                <div class="text-xs text-brand-lead leading-relaxed border-l-2 border-brand-primary pl-3 italic" id="consultantQuote">
+                  "Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."
+                </div>
+
+                <!-- Unique Schedule Highlight Box -->
+                <div class="p-4 bg-brand-paper border fine-border space-y-2.5 font-mono text-xs">
+                  <div class="flex items-center justify-between border-b fine-border-light pb-2">
+                    <span class="text-brand-muted uppercase text-[10px] font-bold">Hari Konsultasi:</span>
+                    <span id="consultantDays" class="text-brand-dark font-bold text-xs bg-white px-2 py-0.5 border fine-border">Senin, Rabu, & Jumat</span>
+                  </div>
+                  <div class="flex items-center justify-between border-b fine-border-light pb-2">
+                    <span class="text-brand-muted uppercase text-[10px] font-bold">Rentang Jam:</span>
+                    <span id="consultantHours" class="text-brand-dark font-bold text-xs">09:00 – 16:30 WIB</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-brand-muted uppercase text-[10px] font-bold">Format Sesi:</span>
+                    <span class="text-brand-primary font-bold text-xs">Online / Hybrid (60 Menit)</span>
+                  </div>
+                </div>
+
+                <div class="text-[11px] font-mono text-brand-muted flex items-center space-x-2">
+                  <span>Rekam Jejak Klien:</span>
+                  <span id="consultantTrackRecord" class="text-brand-dark font-bold">Dapen Freeport Indonesia • BEM ITS</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==================== STEP 3: PILIH TANGGAL & JAM ==================== -->
+          <div class="bg-brand-surface border fine-border p-6 sm:p-8 space-y-6 shadow-sm">
+            <div class="flex items-center justify-between border-b fine-border-light pb-4">
+              <div class="space-y-1">
+                <span class="font-mono text-xs font-bold text-brand-primary tracking-widest uppercase">Langkah 03 / 04</span>
+                <h2 class="text-xl font-bold text-brand-dark">Tentukan Tanggal & Jam Konsultasi</h2>
+              </div>
+              <span class="text-xs font-mono text-brand-muted">Sesuai Ketersediaan *</span>
+            </div>
+
+            <!-- Date Picker Section -->
+            <div class="space-y-3">
+              <label for="consultationDate" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                1. Pilih Tanggal Sesi:
+              </label>
+              <div class="relative">
+                <input type="date" id="consultationDate" required class="form-input w-full p-3.5 bg-brand-paper border fine-border text-sm font-mono text-brand-dark focus:bg-white" onchange="onDateSelected(this.value)">
+              </div>
+
+              <!-- Recommendation Quick Pills -->
+              <div class="space-y-1.5 pt-1">
+                <span class="text-[11px] font-mono text-brand-muted block">Atau pilih rekomendasi hari operasional terdekat:</span>
+                <div class="flex flex-wrap gap-2" id="dateQuickPills">
+                  <!-- Dynamically generated pills -->
+                </div>
+              </div>
+
+              <!-- Date validation helper text -->
+              <div id="dateNotice" class="text-xs font-mono p-3 border hidden"></div>
+            </div>
+
+            <!-- Time Slots Section -->
+            <div class="space-y-3 pt-4 border-t fine-border-light">
+              <label class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                2. Pilih Jam Konsultasi yang Tersedia:
+              </label>
+              <p class="text-xs text-brand-muted">
+                Slot waktu unik disesuaikan dengan jadwal kerja konsultan penanggung jawab:
+              </p>
+
+              <!-- Slot Chips Container -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1" id="timeSlotsContainer">
+                <!-- Dynamically generated time slot buttons -->
+              </div>
+              <input type="hidden" id="selectedTimeSlot" required>
+              <p id="timeSlotError" class="text-xs font-mono text-red-600 hidden">⚠️ Harap pilih salah satu jam konsultasi.</p>
+            </div>
+          </div>
+
+          <!-- ==================== STEP 4: DATA IDENTITAS PEMOHON ==================== -->
+          <div class="bg-brand-surface border fine-border p-6 sm:p-8 space-y-6 shadow-sm">
+            <div class="flex items-center justify-between border-b fine-border-light pb-4">
+              <div class="space-y-1">
+                <span class="font-mono text-xs font-bold text-brand-primary tracking-widest uppercase">Langkah 04 / 04</span>
+                <h2 class="text-xl font-bold text-brand-dark">Data Pemohon & Ringkasan Kebutuhan</h2>
+              </div>
+              <span class="text-xs font-mono text-brand-muted">Informasi Mitra</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="space-y-1.5">
+                <label for="clientName" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                  Nama Lengkap Pemohon *
+                </label>
+                <input type="text" id="clientName" required placeholder="Contoh: Bpk. Hendra Gunawan" class="form-input w-full p-3 bg-brand-paper border fine-border text-sm text-brand-dark focus:bg-white" oninput="updateSummary()">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="clientCompany" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                  Instansi / Perusahaan *
+                </label>
+                <input type="text" id="clientCompany" required placeholder="Contoh: PT Semen Indonesia (Persero) Tbk" class="form-input w-full p-3 bg-brand-paper border fine-border text-sm text-brand-dark focus:bg-white" oninput="updateSummary()">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="clientPhone" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                  Nomor WhatsApp Pemohon *
+                </label>
+                <input type="tel" id="clientPhone" required placeholder="Contoh: 081234567890" class="form-input w-full p-3 bg-brand-paper border fine-border text-sm text-brand-dark focus:bg-white" oninput="updateSummary()">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="clientRole" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                  Jabatan / Posisi (Opsional)
+                </label>
+                <input type="text" id="clientRole" placeholder="Contoh: Head of Financial Planning / Direktur" class="form-input w-full p-3 bg-brand-paper border fine-border text-sm text-brand-dark focus:bg-white" oninput="updateSummary()">
+              </div>
+            </div>
+
+            <div class="space-y-1.5 pt-2">
+              <label for="clientNotes" class="block text-xs font-mono uppercase tracking-wider font-bold text-brand-dark">
+                Ringkasan Topik / Pokok Bahasan Diskusi (Opsional)
+              </label>
+              <textarea id="clientNotes" rows="3" placeholder="Jelaskan secara ringkas persoalan bisnis atau tujuan yang ingin dicapai melalui sesi konsultasi ini..." class="form-input w-full p-3 bg-brand-paper border fine-border text-sm text-brand-lead focus:bg-white leading-relaxed" oninput="updateSummary()"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Sticky Live Receipt & WhatsApp CTA (5 Cols) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+
+          <!-- Live Summary Card (Editorial Style) -->
+          <div class="bg-brand-surface border-2 border-brand-primary p-6 sm:p-7 shadow-md relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-mono uppercase tracking-widest px-3 py-1 font-bold">
+              Ringkasan Sesi
+            </div>
+
+            <div class="border-b fine-border-light pb-4 mb-5">
+              <span class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">Konfirmasi Penjadwalan</span>
+              <h3 class="font-serif text-2xl font-bold text-brand-dark mt-1">Inisiasi Konsultasi ACTIVA</h3>
+            </div>
+
+            <!-- Receipt Items -->
+            <div class="space-y-4 font-mono text-xs">
+              
+              <div class="border-b fine-border-light pb-3">
+                <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Bidang Layanan:</span>
+                <p id="summaryService" class="font-bold text-brand-dark text-sm">01. Konsultasi Keuangan</p>
+                <p id="summaryServiceSub" class="text-[11px] text-brand-muted">Financial Consulting & Solvency</p>
+              </div>
+
+              <div class="border-b fine-border-light pb-3">
+                <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Konsultan Penanggung Jawab:</span>
+                <div class="flex items-center space-x-3 mt-1">
+                  <img id="summaryConsultantPhoto" src="assets/images/member-shabina-portrait.png" alt="Konsultan" class="w-9 h-9 object-cover border fine-border rounded-none">
+                  <div>
+                    <p id="summaryConsultant" class="font-bold text-brand-dark">Shabina Aulya Anjanie H</p>
+                    <p id="summaryConsultantRole" class="text-[10px] text-brand-muted">Advisory Lead • Sains Aktuaria ITS</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 border-b fine-border-light pb-3">
+                <div>
+                  <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Tanggal Sesi:</span>
+                  <p id="summaryDate" class="font-bold text-brand-primary">Belum Dipilih</p>
+                </div>
+                <div>
+                  <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Jam Sesi:</span>
+                  <p id="summaryTime" class="font-bold text-brand-primary">Belum Dipilih</p>
+                </div>
+              </div>
+
+              <div class="border-b fine-border-light pb-3">
+                <span class="text-brand-muted text-[10px] uppercase block mb-0.5">Pemohon:</span>
+                <p id="summaryClient" class="text-brand-lead">Nama: -</p>
+                <p id="summaryCompany" class="text-brand-lead">Instansi: -</p>
+              </div>
+
+              <div class="p-3 bg-brand-paper border fine-border text-[11px] text-brand-muted leading-relaxed">
+                ℹ️ Penekanan tombol di bawah akan membuka aplikasi WhatsApp resmi ACTIVA Consulting dengan teks yang telah tersusun rapi. Tim kami akan segera merespons konfirmasi ketersediaan jadwal Anda.
+              </div>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-6 pt-2">
+              <button type="submit" id="submitBtn" class="w-full py-4 px-6 bg-brand-primary text-white font-mono text-xs uppercase tracking-widest font-bold hover:bg-brand-dark transition-all duration-200 flex items-center justify-center space-x-3 shadow-md group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-green-400 group-hover:scale-110 transition-transform">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416c-5.516 0-10 4.484-10 10 0 1.905.539 3.684 1.471 5.199l-1.56 5.698 5.86-1.537c1.458.851 3.161 1.34 4.229 1.34 5.516 0 10-4.484 10-10 0-5.516-4.484-10-10-10z"/>
+                </svg>
+                <span>Kirim Jadwal via WhatsApp &rarr;</span>
+              </button>
+            </div>
+
+            <!-- Hotline Footnote -->
+            <div class="mt-4 pt-4 border-t fine-border-light flex items-center justify-between text-[11px] font-mono text-brand-muted">
+              <span>Hotline Langsung:</span>
+              <a href="https://wa.me/6281249643767" class="text-brand-dark font-bold hover:text-brand-primary">0812-4964-3767</a>
+            </div>
+
+          </div>
+
+          <!-- Institutional Guarantee Badge -->
+          <div class="p-4 bg-brand-surface border fine-border space-y-1.5 text-xs">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-primary font-bold">Kerahasiaan & Standar Etika:</span>
+            <p class="text-brand-lead leading-relaxed text-[11px]">
+              Setiap sesi inisiasi kerja sama dilindungi oleh komitmen kerahasiaan institusional ACTIVA Consulting dan Departemen Sains Aktuaria ITS.
+            </p>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+
+  <!-- ==================== EXECUTIVE FOOTER ==================== -->
+  <footer class="border-t fine-border bg-brand-surface py-8 text-xs font-mono text-brand-muted">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 ACTIVA Consulting (Sains Aktuaria ITS Surabaya). All rights reserved.</p>
+      <div class="flex items-center space-x-4">
+        <a href="index.html#services" class="hover:text-brand-primary">4 Layanan Utama</a>
+        <span>•</span>
+        <a href="index.html#advisors" class="hover:text-brand-primary">Tim Konsultan</a>
+        <span>•</span>
+        <a href="mailto:activasurabaya@gmail.com" class="hover:text-brand-primary">Email Resmi</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // ---------------------------------------------------------
+    // 1. DATA MASTER 4 BIDANG LAYANAN & MEMBER UNIK
+    // ---------------------------------------------------------
+    const servicesData = {
+      1: {
+        id: 1,
+        title: "Konsultasi Keuangan",
+        subtitle: "Financial Consulting & Solvency",
+        consultant: {
+          name: "Shabina Aulya Anjanie H",
+          badge: "ADVISORY LEAD",
+          role: "Konsultasi Finansial & Valuasi Solvabilitas",
+          photo: "assets/images/member-shabina-portrait.png",
+          projects: "14 Proyek Teruji",
+          trackRecord: "Dapen Freeport Indonesia • BEM ITS",
+          quote: '"Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."',
+          operationalDays: "Senin, Rabu, & Jumat",
+          activeDayNumbers: [1, 3, 5], // 1=Mon, 3=Wed, 5=Fri
+          hoursRange: "09:00 – 16:30 WIB",
+          timeSlots: ["09:00 WIB", "10:30 WIB", "13:30 WIB", "15:00 WIB"]
+        }
+      },
+      2: {
+        id: 2,
+        title: "Analisis Data & Visualisasi",
+        subtitle: "Predictive Analytics & Executive Dashboards",
+        consultant: {
+          name: "Szunir Laura Herliana",
+          badge: "LEAD ANALYST",
+          role: "Analisis Data Kuantitatif & Visualisasi",
+          photo: "assets/images/member-szunir-portrait.png",
+          projects: "14 Proyek Teruji",
+          trackRecord: "Pelindo • PT BIMA",
+          quote: '"Mengubah tumpukan big data operasional dan keuangan menjadi arsitektur visual dashboard intelijen bisnis yang prediktif dan aplikatif."',
+          operationalDays: "Selasa, Kamis, & Sabtu",
+          activeDayNumbers: [2, 4, 6], // 2=Tue, 4=Thu, 6=Sat
+          hoursRange: "10:00 – 17:00 WIB",
+          timeSlots: ["10:00 WIB", "11:30 WIB", "14:00 WIB", "15:30 WIB"]
+        }
+      },
+      3: {
+        id: 3,
+        title: "Konsultasi Investasi",
+        subtitle: "Portfolio Viability & Feasibility Studies",
+        consultant: {
+          name: "Bernadeta Andrea P",
+          badge: "PRACTICE LEAD",
+          role: "Konsultasi Investasi & Alokasi Portofolio",
+          photo: "assets/images/member-andrea-portrait.png",
+          projects: "9 Proyek Teruji",
+          trackRecord: "Dapen Telkom Bandung • BPJS",
+          quote: '"Optimalisasi alokasi instrumen pendapatan tetap dan cash flow matching untuk menjamin ketahanan pemenuhan liabilitas jangka panjang."',
+          operationalDays: "Senin, Selasa, & Kamis",
+          activeDayNumbers: [1, 2, 4], // 1=Mon, 2=Tue, 4=Thu
+          hoursRange: "08:30 – 16:00 WIB",
+          timeSlots: ["08:30 WIB", "10:00 WIB", "13:00 WIB", "14:30 WIB"]
+        }
+      },
+      4: {
+        id: 4,
+        title: "Manajemen Risiko Terintegrasi",
+        subtitle: "Actuarial Risk Modeling & Mitigation",
+        consultant: {
+          name: "Husnul Khotimah",
+          badge: "PRACTICE LEAD",
+          role: "Manajemen Risiko & Pemodelan Aktuaria",
+          photo: "assets/images/member-husnul-portrait.png",
+          projects: "12 Proyek Teruji",
+          trackRecord: "Kemenkeu RI • PT BIMA",
+          quote: '"Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."',
+          operationalDays: "Rabu, Kamis, & Jumat",
+          activeDayNumbers: [3, 4, 5], // 3=Wed, 4=Thu, 5=Fri
+          hoursRange: "09:30 – 17:00 WIB",
+          timeSlots: ["09:30 WIB", "11:00 WIB", "14:00 WIB", "15:30 WIB"]
+        }
+      }
+    };
+
+    let currentServiceId = 1;
+    let selectedDateString = "";
+    let selectedSlotString = "";
+
+    const indonesianDays = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const indonesianMonths = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+
+    // ---------------------------------------------------------
+    // 2. INITIALIZATION
+    // ---------------------------------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set min date to today
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      const minDate = `${yyyy}-${mm}-${dd}`;
+      
+      const dateInput = document.getElementById("consultationDate");
+      if (dateInput) {
+        dateInput.min = minDate;
+      }
+
+      // Check query parameter ?service=X
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceParam = parseInt(urlParams.get('service'));
+      if (serviceParam && servicesData[serviceParam]) {
+        currentServiceId = serviceParam;
+      }
+
+      // Apply initial service UI
+      applyService(currentServiceId);
+    });
+
+    // ---------------------------------------------------------
+    // 3. SERVICE SELECTION LOGIC
+    // ---------------------------------------------------------
+    function onServiceChange(serviceId) {
+      applyService(serviceId);
+    }
+
+    function applyService(serviceId) {
+      currentServiceId = serviceId;
+      const data = servicesData[serviceId];
+      if (!data) return;
+
+      // Update Radio Cards selection style
+      document.querySelectorAll(".service-card").forEach(card => {
+        const id = parseInt(card.getAttribute("data-service-id"));
+        const radio = card.querySelector("input[type=radio]");
+        const indicator = card.querySelector(".radio-indicator");
+        const dot = indicator?.querySelector("span");
+
+        if (id === serviceId) {
+          card.classList.add("selected");
+          if (radio) radio.checked = true;
+          if (indicator) {
+            indicator.classList.remove("border-brand-border");
+            indicator.classList.add("border-brand-primary");
+          }
+          if (dot) {
+            dot.classList.remove("bg-transparent");
+            dot.classList.add("bg-brand-primary");
+          }
+        } else {
+          card.classList.remove("selected");
+          if (indicator) {
+            indicator.classList.add("border-brand-border");
+            indicator.classList.remove("border-brand-primary");
+          }
+          if (dot) {
+            dot.classList.add("bg-transparent");
+            dot.classList.remove("bg-brand-primary");
+          }
+        }
+      });
+
+      // Update Consultant Profile Card (Step 2)
+      document.getElementById("consultantPhoto").src = data.consultant.photo;
+      document.getElementById("consultantProjectsBadge").textContent = data.consultant.projects;
+      document.getElementById("consultantBadge").textContent = data.consultant.badge;
+      document.getElementById("consultantName").textContent = data.consultant.name;
+      document.getElementById("consultantRole").textContent = data.consultant.role;
+      document.getElementById("consultantQuote").textContent = data.consultant.quote;
+      document.getElementById("consultantDays").textContent = data.consultant.operationalDays;
+      document.getElementById("consultantHours").textContent = data.consultant.hoursRange;
+      document.getElementById("consultantTrackRecord").textContent = data.consultant.trackRecord;
+
+      // Render Time Slots (Step 3)
+      renderTimeSlots(data.consultant.timeSlots);
+
+      // Render Quick Date Pills based on consultant's operational days
+      renderDateQuickPills(data.consultant.activeDayNumbers);
+
+      // Re-validate current date if already filled
+      const currentDateVal = document.getElementById("consultationDate").value;
+      if (currentDateVal) {
+        onDateSelected(currentDateVal);
+      }
+
+      // Update Live Summary
+      updateSummary();
+    }
+
+    // ---------------------------------------------------------
+    // 4. TIME SLOTS GENERATION & SELECTION
+    // ---------------------------------------------------------
+    function renderTimeSlots(slots) {
+      const container = document.getElementById("timeSlotsContainer");
+      container.innerHTML = "";
+      selectedSlotString = "";
+      document.getElementById("selectedTimeSlot").value = "";
+
+      slots.forEach(slot => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "slot-chip p-3 text-xs font-mono border fine-border bg-white text-brand-dark rounded-none text-center font-bold";
+        btn.innerHTML = `<span>${slot}</span>`;
+        btn.onclick = () => selectTimeSlot(slot, btn);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectTimeSlot(slot, btnElement) {
+      selectedSlotString = slot;
+      document.getElementById("selectedTimeSlot").value = slot;
+      document.getElementById("timeSlotError").classList.add("hidden");
+
+      // Set active styles
+      document.querySelectorAll(".slot-chip").forEach(el => el.classList.remove("active"));
+      btnElement.classList.add("active");
+
+      updateSummary();
+    }
+
+    // ---------------------------------------------------------
+    // 5. QUICK DATE RECOMMENDATION PILLS
+    // ---------------------------------------------------------
+    function renderDateQuickPills(activeDayNumbers) {
+      const pillsContainer = document.getElementById("dateQuickPills");
+      pillsContainer.innerHTML = "";
+
+      const today = new Date();
+      let foundCount = 0;
+      let checkOffset = 1; // start checking from tomorrow
+
+      while (foundCount < 3 && checkOffset <= 14) {
+        const futureDate = new Date();
+        futureDate.setDate(today.getDate() + checkOffset);
+        const dayOfWeek = futureDate.getDay();
+
+        if (activeDayNumbers.includes(dayOfWeek)) {
+          const yyyy = futureDate.getFullYear();
+          const mm = String(futureDate.getMonth() + 1).padStart(2, '0');
+          const dd = String(futureDate.getDate()).padStart(2, '0');
+          const dateStr = `${yyyy}-${mm}-${dd}`;
+
+          const dayName = indonesianDays[dayOfWeek];
+          const pillText = `${dayName}, ${futureDate.getDate()} ${indonesianMonths[futureDate.getMonth()].slice(0, 3)}`;
+
+          const pill = document.createElement("button");
+          pill.type = "button";
+          pill.className = "text-[11px] font-mono px-3 py-1.5 bg-white border fine-border hover:border-brand-primary hover:text-brand-primary text-brand-lead font-medium transition-colors shadow-2xs";
+          pill.textContent = `📅 ${pillText}`;
+          pill.onclick = () => {
+            document.getElementById("consultationDate").value = dateStr;
+            onDateSelected(dateStr);
+          };
+          pillsContainer.appendChild(pill);
+          foundCount++;
+        }
+        checkOffset++;
+      }
+    }
+
+    // ---------------------------------------------------------
+    // 6. DATE INPUT HANDLER & DAY VERIFICATION
+    // ---------------------------------------------------------
+    function onDateSelected(dateValue) {
+      if (!dateValue) {
+        selectedDateString = "";
+        updateSummary();
+        return;
+      }
+
+      const parts = dateValue.split("-");
+      const year = parseInt(parts[0]);
+      const month = parseInt(parts[1]) - 1;
+      const day = parseInt(parts[2]);
+      const dateObj = new Date(year, month, day);
+
+      const dayOfWeek = dateObj.getDay();
+      const dayName = indonesianDays[dayOfWeek];
+      const monthName = indonesianMonths[month];
+      const formattedDate = `${dayName}, ${day} ${monthName} ${year}`;
+
+      const activeDays = servicesData[currentServiceId].consultant.activeDayNumbers;
+      const consultantDaysText = servicesData[currentServiceId].consultant.operationalDays;
+      const consultantName = servicesData[currentServiceId].consultant.name;
+      const noticeBox = document.getElementById("dateNotice");
+
+      if (activeDays.includes(dayOfWeek)) {
+        // Valid operating day
+        selectedDateString = formattedDate;
+        noticeBox.className = "text-xs font-mono p-3 border border-emerald-200 bg-emerald-50 text-emerald-800";
+        noticeBox.innerHTML = `✓ <strong>Jadwal Cocok:</strong> ${consultantName} beroperasi pada hari <strong>${dayName}</strong>.`;
+        noticeBox.classList.remove("hidden");
+      } else {
+        // Not an operating day
+        selectedDateString = `${formattedDate} (Perlu Penyesuaian Jadwal)`;
+        noticeBox.className = "text-xs font-mono p-3 border border-amber-300 bg-amber-50 text-amber-900";
+        noticeBox.innerHTML = `⚠️ <strong>Pemberitahuan Jadwal:</strong> ${consultantName} reguler beroperasi pada hari <strong>${consultantDaysText}</strong>. Anda tetap dapat melanjutkan pengajuan, tim kami akan mengonfirmasi penyesuaian via WhatsApp.`;
+        noticeBox.classList.remove("hidden");
+      }
+
+      updateSummary();
+    }
+
+    // ---------------------------------------------------------
+    // 7. LIVE RECEIPT & SUMMARY UPDATER
+    // ---------------------------------------------------------
+    function updateSummary() {
+      const data = servicesData[currentServiceId];
+      if (!data) return;
+
+      document.getElementById("summaryService").textContent = `0${data.id}. ${data.title}`;
+      document.getElementById("summaryServiceSub").textContent = data.subtitle;
+      document.getElementById("summaryConsultant").textContent = data.consultant.name;
+      document.getElementById("summaryConsultantRole").textContent = `${data.consultant.badge} • ${data.consultant.role}`;
+      document.getElementById("summaryConsultantPhoto").src = data.consultant.photo;
+
+      document.getElementById("summaryDate").textContent = selectedDateString || "Belum Dipilih";
+      document.getElementById("summaryTime").textContent = selectedSlotString || "Belum Dipilih";
+
+      const nameVal = document.getElementById("clientName").value.trim();
+      const compVal = document.getElementById("clientCompany").value.trim();
+
+      document.getElementById("summaryClient").textContent = `Nama: ${nameVal || "-"}`;
+      document.getElementById("summaryCompany").textContent = `Instansi: ${compVal || "-"}`;
+    }
+
+    // ---------------------------------------------------------
+    // 8. FORM SUBMIT & WHATSAPP REDIRECTION
+    // ---------------------------------------------------------
+    function handleFormSubmit() {
+      const nameInput = document.getElementById("clientName");
+      const companyInput = document.getElementById("clientCompany");
+      const phoneInput = document.getElementById("clientPhone");
+      const dateInput = document.getElementById("consultationDate");
+      const slotInput = document.getElementById("selectedTimeSlot");
+      const roleInput = document.getElementById("clientRole");
+      const notesInput = document.getElementById("clientNotes");
+
+      // Validate required inputs
+      if (!nameInput.value.trim()) {
+        alert("Harap masukkan Nama Lengkap Anda.");
+        nameInput.focus();
+        return;
+      }
+
+      if (!companyInput.value.trim()) {
+        alert("Harap masukkan Nama Instansi atau Perusahaan.");
+        companyInput.focus();
+        return;
+      }
+
+      if (!phoneInput.value.trim()) {
+        alert("Harap masukkan Nomor WhatsApp Pemohon.");
+        phoneInput.focus();
+        return;
+      }
+
+      if (!dateInput.value) {
+        alert("Harap pilih tanggal konsultasi terlebih dahulu.");
+        dateInput.focus();
+        return;
+      }
+
+      if (!slotInput.value) {
+        document.getElementById("timeSlotError").classList.remove("hidden");
+        alert("Harap pilih salah satu jam sesi konsultasi yang tersedia.");
+        document.getElementById("timeSlotsContainer").scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      const service = servicesData[currentServiceId];
+      const clientName = nameInput.value.trim();
+      const clientCompany = companyInput.value.trim();
+      const clientPhone = phoneInput.value.trim();
+      const clientRole = roleInput.value.trim() || "-";
+      const clientNotes = notesInput.value.trim() || "Tidak ada catatan tambahan";
+      const dateSelected = selectedDateString;
+      const timeSelected = selectedSlotString;
+
+      // Construct Professional WhatsApp Message
+      const message = 
+`Halo tim ACTIVA Consulting, saya ingin mengajukan inisiasi kerja sama dan penjadwalan konsultasi:
+
+📌 *DETAIL KONSULTASI:*
+• *Layanan:* 0${service.id}. ${service.title} (${service.subtitle})
+• *Konsultan Bertugas:* ${service.consultant.name} (${service.consultant.badge})
+• *Hari & Tanggal Sesi:* ${dateSelected}
+• *Waktu Sesi:* ${timeSelected}
+• *Format:* Online / Hybrid Diskusi Terarah
+
+👤 *DATA PEMOHON:*
+• *Nama Lengkap:* ${clientName}
+• *Instansi/Perusahaan:* ${clientCompany}
+• *Jabatan:* ${clientRole}
+• *Kontak WhatsApp:* ${clientPhone}
+
+📝 *TOPIK / KEBUTUHAN UTAMA:*
+${clientNotes}
+
+Mohon konfirmasi kesediaan dan detail tautan pertemuannya. Terima kasih.`;
+
+      // Official WhatsApp Hotline URL
+      const whatsappUrl = `https://wa.me/6281249643767?text=${encodeURIComponent(message)}`;
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACTIVA Consulting | Insight • Value • Better Decisions</title>
-  <meta name="description" content="ACTIVA Consulting (Sains Aktuaria ITS Surabaya) — Mitra konsultasi aktuaria, manajemen risiko, analisis data prediktif, dan strategi investasi bernilai tinggi.">
+  <meta name="description"
+    content="ACTIVA Consulting (Sains Aktuaria ITS Surabaya) — Mitra konsultasi aktuaria, manajemen risiko, analisis data prediktif, dan strategi investasi bernilai tinggi.">
   <link rel="icon" type="image/png" href="logo.png">
 
   <!-- Google Fonts: Editorial Serif + Clean Sans + Monospace -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -50,12 +54,15 @@
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       -webkit-font-smoothing: antialiased;
     }
+
     .fine-border {
       border-color: #D3E0EE;
     }
+
     .fine-border-light {
       border-color: #E2EAF2;
     }
+
     ::selection {
       background-color: #16396B;
       color: #FFFFFF;
@@ -73,11 +80,13 @@
         animation-timeline: view();
         animation-range: entry 10% cover 40%;
       }
+
       @keyframes revealCard {
         from {
           opacity: 0.25;
           transform: translateY(35px) scale(0.98);
         }
+
         to {
           opacity: 1;
           transform: translateY(0) scale(1);
@@ -92,6 +101,7 @@
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
+
     .scroll-reveal-card.in-view {
       opacity: 1;
       transform: translateY(0);
@@ -101,29 +111,35 @@
     .advisor-track-item {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .advisor-track-item.active {
       border-left-color: #16396B !important;
       background-color: rgba(22, 57, 107, 0.05);
     }
+
     .advisor-track-item.active .track-num {
       color: #16396B !important;
       font-weight: 700;
     }
+
     .advisor-track-item.active .track-name {
       color: #0E254A !important;
       font-weight: 700;
     }
+
     .advisor-track-item.active .track-dot {
       background-color: #16396B !important;
       transform: scale(1.3);
     }
   </style>
 </head>
+
 <body class="font-sans antialiased text-brand-lead bg-brand-paper">
 
   <!-- ==================== TOP SCROLL PROGRESS BAR ==================== -->
   <div id="scrollProgressTrack" class="fixed top-0 left-0 w-full h-[3px] z-[100] bg-transparent pointer-events-none">
-    <div id="scrollProgressBar" class="h-full w-0 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-sky"></div>
+    <div id="scrollProgressBar" class="h-full w-0 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-sky">
+    </div>
   </div>
 
   <!-- ==========================================================================
@@ -131,16 +147,17 @@
        ========================================================================== -->
   <header class="border-b fine-border bg-brand-paper/95 sticky top-0 z-50 backdrop-blur-md transition-all duration-200">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-      
+
       <!-- Brand Logo & Institutional Tag -->
       <a href="#home" class="flex items-center space-x-3.5 group">
         <img src="logo.png" alt="ACTIVA Consulting Logo" class="h-10 w-auto object-contain">
         <div class="flex flex-col">
-          <span class="font-serif text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors leading-none">ACTIVA</span>
+          <span
+            class="font-serif text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors leading-none">ACTIVA</span>
           <span class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">Consulting / ITS</span>
         </div>
       </a>
-      
+
       <!-- Streamlined Navigation -->
       <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-brand-lead">
         <a href="#about" class="hover:text-brand-primary transition-colors py-1">Fondasi</a>
@@ -152,27 +169,33 @@
 
       <!-- Executive Action -->
       <div class="flex items-center space-x-4">
-        <a href="https://wa.me/6281249643767?text=Halo%20ACTIVA%20Consulting,%20kami%20ingin%20menginisiasi%20diskusi%20kerja%20sama" 
-           target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center px-4 sm:px-5 py-2.5 text-xs font-mono tracking-widest uppercase bg-brand-primary text-white hover:bg-brand-dark transition-all duration-200 shadow-sm">
+        <a href="inisiasi-kerjasama.html"
+          class="inline-flex items-center px-4 sm:px-5 py-2.5 text-xs font-mono tracking-widest uppercase bg-brand-primary text-white hover:bg-brand-dark transition-all duration-200 shadow-sm">
           Inisiasi Kerja Sama
         </a>
-        <button id="mobileMenuBtn" aria-label="Menu Navigasi" class="md:hidden p-2 text-brand-dark hover:text-brand-primary">
+        <button id="mobileMenuBtn" aria-label="Menu Navigasi"
+          class="md:hidden p-2 text-brand-dark hover:text-brand-primary">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 6h16M4 12h16M4 18h16"/>
+            <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden border-t fine-border bg-brand-surface px-6 py-5 space-y-4 text-xs font-mono uppercase tracking-wider">
+    <div id="mobileMenu"
+      class="hidden md:hidden border-t fine-border bg-brand-surface px-6 py-5 space-y-4 text-xs font-mono uppercase tracking-wider">
       <a href="#about" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Fondasi</a>
-      <a href="#services" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Praktik Layanan</a>
-      <a href="#methodology" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Metodologi & Durasi</a>
-      <a href="#advisors" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Tim Konsultan</a>
-      <a href="#governance" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Tata Kelola</a>
-      <a href="#contact" class="block text-brand-primary font-bold" onclick="toggleMobileMenu()">Kontak Resmi</a>
+      <a href="#services" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Praktik
+        Layanan</a>
+      <a href="#methodology" class="block text-brand-dark hover:text-brand-primary"
+        onclick="toggleMobileMenu()">Metodologi & Durasi</a>
+      <a href="#advisors" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Tim
+        Konsultan</a>
+      <a href="#governance" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Tata
+        Kelola</a>
+      <a href="#contact" class="block text-brand-dark hover:text-brand-primary" onclick="toggleMobileMenu()">Kontak Resmi</a>
+      <a href="inisiasi-kerjasama.html" class="block text-brand-primary font-bold pt-2 border-t fine-border-light">Inisiasi Kerja Sama &rarr;</a>
     </div>
   </header>
 
@@ -183,32 +206,34 @@
     <section class="border-b fine-border pt-12 pb-16 lg:pt-16 lg:pb-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
+
           <!-- Left Column: Editorial Headline, Narrative, Actions & Quantitative Badges -->
           <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-primary">
+            <div
+              class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-primary">
               <span>Sains Aktuaria ITS Surabaya</span>
               <span class="text-brand-muted">•</span>
               <span>Proposal Kemitraan 2026</span>
             </div>
-            
+
             <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.06] tracking-tight text-brand-dark">
               Ketepatan kalkulasi aktuaria untuk keputusan strategis bernilai tinggi.
             </h1>
-            
+
             <p class="text-base lg:text-lg font-light text-brand-lead leading-relaxed">
-              ACTIVA Consulting menyatukan ketelitian matematika probabilitas, pemodelan risiko, dan wawasan bisnis untuk memandu entitas korporasi serta institusi menghadapi ketidakpastian pasar secara terukur.
+              ACTIVA Consulting menyatukan ketelitian matematika probabilitas, pemodelan risiko, dan wawasan bisnis
+              untuk memandu entitas korporasi serta institusi menghadapi ketidakpastian pasar secara terukur.
             </p>
-            
+
             <!-- Actions & Philosophy Motto -->
             <div class="space-y-2 pt-1">
               <div class="flex flex-wrap items-center gap-4 text-xs font-mono">
-                <a href="https://wa.me/6281249643767?text=Halo%20ACTIVA%20Consulting,%20kami%20ingin%20menginisiasi%20diskusi%20kerja%20sama" 
-                   target="_blank" rel="noopener noreferrer" 
-                   class="px-5 py-3 bg-brand-primary text-white font-bold uppercase tracking-wider hover:bg-brand-dark transition-all shadow-sm">
+                <a href="inisiasi-kerjasama.html"
+                  class="px-5 py-3 bg-brand-primary text-white font-bold uppercase tracking-wider hover:bg-brand-dark transition-all shadow-sm">
                   Inisiasi Kerja Sama &rarr;
                 </a>
-                <a href="#services" class="px-5 py-3 border fine-border text-brand-dark font-bold uppercase tracking-wider hover:bg-brand-surface transition-all">
+                <a href="#services"
+                  class="px-5 py-3 border fine-border text-brand-dark font-bold uppercase tracking-wider hover:bg-brand-surface transition-all">
                   Telusuri 4 Bidang Layanan
                 </a>
               </div>
@@ -219,8 +244,10 @@
 
             <!-- Integrated Editorial Metrics & Pillars (Sleek Inline Matrix) -->
             <div class="pt-6 border-t fine-border-light grid grid-cols-1 sm:grid-cols-12 gap-6">
-              <div class="sm:col-span-5 space-y-1.5 border-b sm:border-b-0 sm:border-r fine-border-light pb-4 sm:pb-0 sm:pr-4">
-                <p class="font-mono text-[10px] uppercase tracking-widest text-brand-muted font-bold">Pilar Inti ACTIVA</p>
+              <div
+                class="sm:col-span-5 space-y-1.5 border-b sm:border-b-0 sm:border-r fine-border-light pb-4 sm:pb-0 sm:pr-4">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-brand-muted font-bold">Pilar Inti ACTIVA
+                </p>
                 <p class="font-serif text-xl font-bold text-brand-dark">Actuarial • Insight • Value</p>
                 <p class="text-xs text-brand-lead leading-relaxed">
                   Fondasi proyeksi likuiditas, valuasi investasi, dan permodelan skenario mitigasi risiko.
@@ -231,7 +258,8 @@
                 <div class="space-y-1">
                   <div class="font-serif text-3xl font-bold text-brand-primary">40+</div>
                   <div class="text-xs font-bold text-brand-dark">Studi & Proyek Teruji</div>
-                  <div class="text-[11px] text-brand-muted leading-tight">Pengalaman kementerian, BUMN & dana pensiun</div>
+                  <div class="text-[11px] text-brand-muted leading-tight">Pengalaman kementerian, BUMN & dana pensiun
+                  </div>
                 </div>
                 <div class="space-y-1">
                   <div class="font-serif text-3xl font-bold text-brand-primary">100%</div>
@@ -242,7 +270,8 @@
             </div>
 
             <!-- Practice Quick Tags Strip -->
-            <div class="pt-4 border-t fine-border-light flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-brand-muted">
+            <div
+              class="pt-4 border-t fine-border-light flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-brand-muted">
               <span class="text-brand-dark font-bold">Fokus Praktik:</span>
               <span class="hover:text-brand-primary">01. Keuangan & Solvabilitas</span>
               <span>•</span>
@@ -258,9 +287,8 @@
           <div class="lg:col-span-5">
             <div class="border fine-border bg-brand-surface p-2.5 shadow-sm">
               <div class="overflow-hidden bg-brand-lightBlue">
-                <img src="assets/images/team-hero.png" 
-                     alt="Tim Konsultan Utama ACTIVA Consulting" 
-                     class="w-full h-auto object-cover object-top filter contrast-[1.02]">
+                <img src="assets/images/team-hero.png" alt="Tim Konsultan Utama ACTIVA Consulting"
+                  class="w-full h-auto object-cover object-top filter contrast-[1.02]">
               </div>
               <div class="p-3.5 bg-brand-surface border-t fine-border space-y-1">
                 <div class="flex items-center justify-between text-xs font-mono">
@@ -273,7 +301,7 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Context Footnote under photo -->
             <div class="mt-3 px-1 flex items-center justify-between text-[11px] font-mono text-brand-muted">
               <span>Rekam Jejak: Kemenkeu RI, Pelindo, BPJS, Dapen</span>
@@ -291,55 +319,70 @@
     <section id="about" class="border-b fine-border py-20 lg:py-28 bg-brand-surface">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-baseline">
-          
+
           <div class="lg:col-span-4">
-            <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Fondasi & Landasan Analitis</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Fondasi & Landasan
+              Analitis</span>
             <h2 class="font-serif text-3xl lg:text-4xl text-brand-dark mt-3 leading-snug">
               Mengapa Berbasis Data Saja Belum Cukup?
             </h2>
             <div class="mt-6 pt-6 border-t fine-border text-xs font-mono text-brand-muted space-y-2">
-              <p><strong class="text-brand-dark">VISI:</strong> Menjadi mitra strategis terdepan yang menghasilkan rekomendasi aktuaria berintegritas tinggi.</p>
-              <p><strong class="text-brand-dark">MISI:</strong> Menghubungkan ketelitian matematika dengan solusi manajerial korporasi yang aplikatif.</p>
+              <p><strong class="text-brand-dark">VISI:</strong> Menjadi mitra strategis terdepan yang menghasilkan
+                rekomendasi aktuaria berintegritas tinggi.</p>
+              <p><strong class="text-brand-dark">MISI:</strong> Menghubungkan ketelitian matematika dengan solusi
+                manajerial korporasi yang aplikatif.</p>
             </div>
           </div>
-          
+
           <div class="lg:col-span-8 space-y-8">
-            <blockquote class="font-serif text-2xl lg:text-3xl text-brand-dark italic leading-snug border-l-2 border-brand-primary pl-6">
-              "Nama ACTIVA merepresentasikan perkawinan antara rigor sains aktuaria dan relevansi strategi bisnis. Data mentah tidak bernilai sebelum diterjemahkan menjadi proyeksi skenario masa depan yang dapat diuji ketahanannya."
+            <blockquote
+              class="font-serif text-2xl lg:text-3xl text-brand-dark italic leading-snug border-l-2 border-brand-primary pl-6">
+              "Nama ACTIVA merepresentasikan perkawinan antara rigor sains aktuaria dan relevansi strategi bisnis. Data
+              mentah tidak bernilai sebelum diterjemahkan menjadi proyeksi skenario masa depan yang dapat diuji
+              ketahanannya."
             </blockquote>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-brand-lead pt-2">
               <p>
-                Fluktuasi suku bunga makro, dinamika likuiditas, dan liabilitas jangka panjang menuntut setiap pembuat kebijakan meninjau data historis secara komprehensif. ACTIVA hadir untuk menjembatani kompleksitas matematis tersebut ke dalam langkah korporasi yang aplikatif dan terukur.
+                Fluktuasi suku bunga makro, dinamika likuiditas, dan liabilitas jangka panjang menuntut setiap pembuat
+                kebijakan meninjau data historis secara komprehensif. ACTIVA hadir untuk menjembatani kompleksitas
+                matematis tersebut ke dalam langkah korporasi yang aplikatif dan terukur.
               </p>
               <p>
-                Dengan latar belakang kuat dalam Departemen Sains Aktuaria Institut Teknologi Sepuluh Nopember (ITS), kami mengaplikasikan standar aktuaria profesional dalam membedah portofolio, memitigasi eksposur kerugian, dan menata tata kelola aset klien.
+                Dengan latar belakang kuat dalam Departemen Sains Aktuaria Institut Teknologi Sepuluh Nopember (ITS),
+                kami mengaplikasikan standar aktuaria profesional dalam membedah portofolio, memitigasi eksposur
+                kerugian, dan menata tata kelola aset klien.
               </p>
             </div>
 
             <!-- Nilai Inti: Horizontal Continuum (Bukan Bento Box) -->
             <div class="pt-8 border-t fine-border">
-              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted block mb-4">Empat Prinsip Nilai Kami</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-brand-muted block mb-4">Empat Prinsip Nilai
+                Kami</span>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="border-t fine-border-light pt-3">
                   <span class="font-mono text-xs text-brand-primary font-bold">01 /</span>
                   <h4 class="text-sm font-bold text-brand-dark mt-1">Analitis</h4>
-                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Ketajaman komputasi dan metodologi inferensial.</p>
+                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Ketajaman komputasi dan metodologi
+                    inferensial.</p>
                 </div>
                 <div class="border-t fine-border-light pt-3">
                   <span class="font-mono text-xs text-brand-primary font-bold">02 /</span>
                   <h4 class="text-sm font-bold text-brand-dark mt-1">Berbasis Data</h4>
-                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Bebas bias asumsi, berpijak pada fakta empiris.</p>
+                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Bebas bias asumsi, berpijak pada fakta
+                    empiris.</p>
                 </div>
                 <div class="border-t fine-border-light pt-3">
                   <span class="font-mono text-xs text-brand-primary font-bold">03 /</span>
                   <h4 class="text-sm font-bold text-brand-dark mt-1">Sesuai Kebutuhan</h4>
-                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Kustomisasi menyeluruh untuk tiap entitas klien.</p>
+                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Kustomisasi menyeluruh untuk tiap entitas
+                    klien.</p>
                 </div>
                 <div class="border-t fine-border-light pt-3">
                   <span class="font-mono text-xs text-brand-primary font-bold">04 /</span>
                   <h4 class="text-sm font-bold text-brand-dark mt-1">Terpercaya</h4>
-                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Integritas etika aktuaria dan kerahasiaan ketat.</p>
+                  <p class="text-xs text-brand-muted mt-1 leading-relaxed">Integritas etika aktuaria dan kerahasiaan
+                    ketat.</p>
                 </div>
               </div>
             </div>
@@ -360,26 +403,24 @@
             <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Ruang Lingkup Penugasan</span>
             <h2 class="font-serif text-4xl lg:text-5xl text-brand-dark mt-2">Empat Bidang Layanan Utama</h2>
           </div>
-          <p class="font-mono text-xs text-brand-muted mt-4 md:mt-0">Deliverables Terdefinisi • Kuantitatif • Aplikatif</p>
+          <p class="font-mono text-xs text-brand-muted mt-4 md:mt-0">Deliverables Terdefinisi • Kuantitatif • Aplikatif
+          </p>
         </div>
 
         <div class="divide-y fine-border">
-          
+
           <!-- Layanan 01: Konsultasi Keuangan -->
           <div class="py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-white/60 transition-colors">
             <div class="lg:col-span-1 font-mono text-sm text-brand-primary font-bold">01 /</div>
             <div class="lg:col-span-4">
               <h3 class="text-2xl font-bold text-brand-dark tracking-tight">Konsultasi Keuangan</h3>
-              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Financial Consulting & Solvency</p>
+              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Financial Consulting &
+                Solvency</p>
             </div>
-            <div class="lg:col-span-4 text-sm text-brand-lead leading-relaxed">
-              Evaluasi komprehensif terhadap kesehatan rasio keuangan korporat, valuasi solvabilitas dan kecukupan likuiditas, serta pemodelan skenario proyeksi arus kas jangka menengah hingga panjang dalam berbagai kondisi makroekonomi.
-            </div>
-            <div class="lg:col-span-3 text-xs font-mono text-brand-muted space-y-1.5 border-l fine-border-light pl-4">
-              <p class="text-brand-dark font-bold uppercase tracking-wider">Output Utama (Deliverables):</p>
-              <p>• Financial Health Diagnostic Report</p>
-              <p>• Dynamic Cash-Flow Projection Model</p>
-              <p>• Solvency & Capital Requirement Plan</p>
+            <div class="lg:col-span-7 text-sm text-brand-lead leading-relaxed">
+              Evaluasi komprehensif terhadap kesehatan rasio keuangan korporat, valuasi solvabilitas dan kecukupan
+              likuiditas, serta pemodelan skenario proyeksi arus kas jangka menengah hingga panjang dalam berbagai
+              kondisi makroekonomi.
             </div>
           </div>
 
@@ -388,16 +429,13 @@
             <div class="lg:col-span-1 font-mono text-sm text-brand-primary font-bold">02 /</div>
             <div class="lg:col-span-4">
               <h3 class="text-2xl font-bold text-brand-dark tracking-tight">Analisis Data & Visualisasi</h3>
-              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Predictive Analytics & Executive Dashboards</p>
+              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Predictive Analytics &
+                Executive Dashboards</p>
             </div>
-            <div class="lg:col-span-4 text-sm text-brand-lead leading-relaxed">
-              Membangun infrastruktur pemantauan berbasis data dengan mengubah tumpukan data operasional dan keuangan klien menjadi arsitektur visual dashboard eksekutif yang responsif, terintegrasi, dan mudah dipahami oleh pengambil keputusan.
-            </div>
-            <div class="lg:col-span-3 text-xs font-mono text-brand-muted space-y-1.5 border-l fine-border-light pl-4">
-              <p class="text-brand-dark font-bold uppercase tracking-wider">Output Utama (Deliverables):</p>
-              <p>• Interactive BI Dashboard (Power BI / Tableau)</p>
-              <p>• Forecasting & Predictive Trend Models</p>
-              <p>• Cleaned Dataset & Pipeline Documentation</p>
+            <div class="lg:col-span-7 text-sm text-brand-lead leading-relaxed">
+              Membangun infrastruktur pemantauan berbasis data dengan mengubah tumpukan data operasional dan keuangan
+              klien menjadi arsitektur visual dashboard eksekutif yang responsif, terintegrasi, dan mudah dipahami oleh
+              pengambil keputusan.
             </div>
           </div>
 
@@ -406,16 +444,13 @@
             <div class="lg:col-span-1 font-mono text-sm text-brand-primary font-bold">03 /</div>
             <div class="lg:col-span-4">
               <h3 class="text-2xl font-bold text-brand-dark tracking-tight">Konsultasi Investasi</h3>
-              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Portfolio Viability & Feasibility Studies</p>
+              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Portfolio Viability &
+                Feasibility Studies</p>
             </div>
-            <div class="lg:col-span-4 text-sm text-brand-lead leading-relaxed">
-              Kajian kelayakan penempatan modal baru, analisa imbal hasil terhadap volatilitas (risk-adjusted return), valuasi instrumen pasar modal, serta formulasi optimalisasi alokasi aset investasi jangka pendek maupun portofolio dana institusional.
-            </div>
-            <div class="lg:col-span-3 text-xs font-mono text-brand-muted space-y-1.5 border-l fine-border-light pl-4">
-              <p class="text-brand-dark font-bold uppercase tracking-wider">Output Utama (Deliverables):</p>
-              <p>• Investment Feasibility Study (FS)</p>
-              <p>• Strategic Asset Allocation Note</p>
-              <p>• Portfolio Sensitivity & Stress Matrix</p>
+            <div class="lg:col-span-7 text-sm text-brand-lead leading-relaxed">
+              Kajian kelayakan penempatan modal baru, analisa imbal hasil terhadap volatilitas (risk-adjusted return),
+              valuasi instrumen pasar modal, serta formulasi optimalisasi alokasi aset investasi jangka pendek maupun
+              portofolio dana institusional.
             </div>
           </div>
 
@@ -424,16 +459,13 @@
             <div class="lg:col-span-1 font-mono text-sm text-brand-primary font-bold">04 /</div>
             <div class="lg:col-span-4">
               <h3 class="text-2xl font-bold text-brand-dark tracking-tight">Manajemen Risiko Terintegrasi</h3>
-              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Actuarial Risk Modeling & Mitigation</p>
+              <p class="font-mono text-xs uppercase tracking-wider text-brand-muted mt-1">Actuarial Risk Modeling &
+                Mitigation</p>
             </div>
-            <div class="lg:col-span-4 text-sm text-brand-lead leading-relaxed">
-              Identifikasi menyeluruh terhadap eksposur risiko operasional, pasar, dan kredit menggunakan metodologi stress-test aktuaria, pemodelan simulasi probabilitas kerugian ekstrem (VaR), dan penyusunan mitigasi preventif terstruktur.
-            </div>
-            <div class="lg:col-span-3 text-xs font-mono text-brand-muted space-y-1.5 border-l fine-border-light pl-4">
-              <p class="text-brand-dark font-bold uppercase tracking-wider">Output Utama (Deliverables):</p>
-              <p>• Comprehensive Risk Register & Heatmap</p>
-              <p>• Shock & Stress-Testing Scenarios</p>
-              <p>• Contingency Mitigation Policy & Protocols</p>
+            <div class="lg:col-span-7 text-sm text-brand-lead leading-relaxed">
+              Identifikasi menyeluruh terhadap eksposur risiko operasional, pasar, dan kredit menggunakan metodologi
+              stress-test aktuaria, pemodelan simulasi probabilitas kerugian ekstrem (VaR), dan penyusunan mitigasi
+              preventif terstruktur.
             </div>
           </div>
 
@@ -447,50 +479,58 @@
     <section id="methodology" class="border-b fine-border py-20 lg:py-28 bg-brand-surface">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="max-w-3xl mb-16">
-          <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Protokol Penugasan Terstruktur</span>
+          <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Protokol Penugasan
+            Terstruktur</span>
           <h2 class="font-serif text-4xl lg:text-5xl text-brand-dark mt-2">Mekanisme Kerja Enam Tahap</h2>
           <p class="text-sm text-brand-lead mt-3 leading-relaxed">
-            Alur kolaborasi terarah dan transparan untuk memastikan rekomendasi kuantitatif selaras dengan tujuan bisnis riil.
+            Alur kolaborasi terarah dan transparan untuk memastikan rekomendasi kuantitatif selaras dengan tujuan bisnis
+            riil.
           </p>
         </div>
 
         <!-- 6-Phase Linear Roadmap -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
-          
+
           <div class="border-t-2 border-brand-primary pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-primary tracking-widest">FASE 01</span>
             <h4 class="text-lg font-bold text-brand-dark">Konsultasi Awal & Diskusi Kebutuhan</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Mendefinisikan target spesifik klien, ruang lingkup persoalan, dan variabel utama yang ingin diselesaikan melalui sesi pendalaman terarah.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Mendefinisikan target spesifik klien, ruang lingkup
+              persoalan, dan variabel utama yang ingin diselesaikan melalui sesi pendalaman terarah.</p>
           </div>
 
           <div class="border-t fine-border pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-muted tracking-widest">FASE 02</span>
             <h4 class="text-lg font-bold text-brand-dark">Penyusunan Proposal Kerja Sama</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Perumusan ruang lingkup terperinci, jadwal kerja (timeline), metodologi yang akan diterapkan, serta rincian komitmen deliverables formal.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Perumusan ruang lingkup terperinci, jadwal kerja
+              (timeline), metodologi yang akan diterapkan, serta rincian komitmen deliverables formal.</p>
           </div>
 
           <div class="border-t fine-border pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-muted tracking-widest">FASE 03</span>
             <h4 class="text-lg font-bold text-brand-dark">Penandatanganan PKS & Integrasi Data</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Finalisasi kontrak hukum, penandatanganan NDA kerahasiaan, pengumpulan dataset historis klien, dan audit kelengkapan variabel.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Finalisasi kontrak hukum, penandatanganan NDA
+              kerahasiaan, pengumpulan dataset historis klien, dan audit kelengkapan variabel.</p>
           </div>
 
           <div class="border-t fine-border pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-muted tracking-widest">FASE 04</span>
             <h4 class="text-lg font-bold text-brand-dark">Pelaksanaan Analisis Komprehensif</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Penerapan formula statistika inferensial, simulasi stokastik Monte Carlo, serta stress-testing terhadap berbagai skenario makroekonomi.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Penerapan formula statistika inferensial, simulasi
+              stokastik Monte Carlo, serta stress-testing terhadap berbagai skenario makroekonomi.</p>
           </div>
 
           <div class="border-t fine-border pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-muted tracking-widest">FASE 05</span>
             <h4 class="text-lg font-bold text-brand-dark">Presentasi Hasil & Penyerahan Laporan</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Penyampaian executive briefing kepada jajaran direksi, penyerahan laporan komprehensif, visual dashboard, dan model kalkulasi.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Penyampaian executive briefing kepada jajaran direksi,
+              penyerahan laporan komprehensif, visual dashboard, dan model kalkulasi.</p>
           </div>
 
           <div class="border-t fine-border pt-5 space-y-2.5">
             <span class="font-mono text-xs font-bold text-brand-muted tracking-widest">FASE 06</span>
             <h4 class="text-lg font-bold text-brand-dark">Dukungan & Evaluasi Pasca-Proyek</h4>
-            <p class="text-xs leading-relaxed text-brand-lead">Sesi monitoring implementasi berkala untuk memastikan asumsi model tetap relevan dengan pergerakan kondisi pasar terkini.</p>
+            <p class="text-xs leading-relaxed text-brand-lead">Sesi monitoring implementasi berkala untuk memastikan
+              asumsi model tetap relevan dengan pergerakan kondisi pasar terkini.</p>
           </div>
 
         </div>
@@ -512,7 +552,8 @@
               <span class="font-mono text-xs font-bold text-brand-primary uppercase">Tier 01</span>
               <h4 class="text-base font-bold text-brand-dark">Proyek Jangka Pendek (1–2 Minggu)</h4>
               <p class="text-xs text-brand-lead leading-relaxed">
-                Fokus pada diagnostic cepat, evaluasi rasio keuangan spesifik, atau perancangan prototype visual dashboard awal.
+                Fokus pada diagnostic cepat, evaluasi rasio keuangan spesifik, atau perancangan prototype visual
+                dashboard awal.
               </p>
             </div>
 
@@ -520,7 +561,8 @@
               <span class="font-mono text-xs font-bold text-brand-primary uppercase">Tier 02</span>
               <h4 class="text-base font-bold text-brand-dark">Proyek Jangka Menengah (3–6 Minggu)</h4>
               <p class="text-xs text-brand-lead leading-relaxed">
-                Penyusunan studi kelayakan investasi komprehensif, arsitektur business intelligence dashboard terintegrasi, atau stress test portofolio.
+                Penyusunan studi kelayakan investasi komprehensif, arsitektur business intelligence dashboard
+                terintegrasi, atau stress test portofolio.
               </p>
             </div>
 
@@ -528,7 +570,8 @@
               <span class="font-mono text-xs font-bold text-brand-primary uppercase">Tier 03</span>
               <h4 class="text-base font-bold text-brand-dark">Proyek Komprehensif (7–12+ Minggu)</h4>
               <p class="text-xs text-brand-lead leading-relaxed">
-                Pemodelan aktuaria penuh, proyeksi liabilitas jangka panjang, pendampingan strategis risiko, dan integrasi sistem analitik korporat.
+                Pemodelan aktuaria penuh, proyeksi liabilitas jangka panjang, pendampingan strategis risiko, dan
+                integrasi sistem analitik korporat.
               </p>
             </div>
           </div>
@@ -543,9 +586,9 @@
          ========================================================================== -->
     <section id="advisors" class="border-b fine-border py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           <!-- Sticky Left Column: Section Headline & Interactive Scroll Tracker -->
           <div class="lg:col-span-4 lg:sticky lg:top-28 space-y-8 self-start">
             <div class="space-y-3">
@@ -556,7 +599,8 @@
                 Tim Konsultan & Analis
               </h2>
               <p class="text-xs text-brand-lead leading-relaxed pt-1">
-                Talenta Sains Aktuaria ITS dengan rekam jejak pada institusi kementerian (Kemenkeu RI), BUMN (Pelindo), dan dana pensiun nasional (BPJS, Dapen).
+                Talenta Sains Aktuaria ITS dengan rekam jejak pada institusi kementerian (Kemenkeu RI), BUMN (Pelindo),
+                dan dana pensiun nasional (BPJS, Dapen).
               </p>
             </div>
 
@@ -565,8 +609,9 @@
               <p class="font-mono text-[10px] uppercase tracking-widest text-brand-muted font-bold mb-3">
                 Urutan Konsultan (Scroll Navigasi):
               </p>
-              
-              <a href="#advisor-1" id="track-advisor-1" class="advisor-track-item active flex items-center justify-between p-3 border-l-2 border-brand-primary pl-4 text-xs font-mono transition-all hover:bg-white/60">
+
+              <a href="#advisor-1" id="track-advisor-1"
+                class="advisor-track-item active flex items-center justify-between p-3 border-l-2 border-brand-primary pl-4 text-xs font-mono transition-all hover:bg-white/60">
                 <div class="flex items-center space-x-2.5">
                   <span class="track-num font-bold text-brand-primary">01 /</span>
                   <span class="track-name font-bold text-brand-dark">Husnul Khotimah</span>
@@ -574,7 +619,8 @@
                 <span class="text-[10px] text-brand-muted">Risk Management</span>
               </a>
 
-              <a href="#advisor-2" id="track-advisor-2" class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
+              <a href="#advisor-2" id="track-advisor-2"
+                class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
                 <div class="flex items-center space-x-2.5">
                   <span class="track-num text-brand-muted font-medium">02 /</span>
                   <span class="track-name text-brand-lead">Szunir Laura Herliana</span>
@@ -582,7 +628,8 @@
                 <span class="text-[10px] text-brand-muted">Data Analytics</span>
               </a>
 
-              <a href="#advisor-3" id="track-advisor-3" class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
+              <a href="#advisor-3" id="track-advisor-3"
+                class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
                 <div class="flex items-center space-x-2.5">
                   <span class="track-num text-brand-muted font-medium">03 /</span>
                   <span class="track-name text-brand-lead">Bernadeta Andrea P</span>
@@ -590,7 +637,8 @@
                 <span class="text-[10px] text-brand-muted">Investment</span>
               </a>
 
-              <a href="#advisor-4" id="track-advisor-4" class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
+              <a href="#advisor-4" id="track-advisor-4"
+                class="advisor-track-item flex items-center justify-between p-3 border-l-2 border-brand-border pl-4 text-xs font-mono transition-all hover:bg-white/60">
                 <div class="flex items-center space-x-2.5">
                   <span class="track-num text-brand-muted font-medium">04 /</span>
                   <span class="track-name text-brand-lead">Shabina Aulya Anjanie H</span>
@@ -608,24 +656,27 @@
 
           <!-- Vertical Stream of 4 Consultants (Displayed One by One on Scroll) -->
           <div class="lg:col-span-8 space-y-12 sm:space-y-16 lg:space-y-24">
-            
+
             <!-- Consultant 01: Husnul Khotimah -->
-            <article id="advisor-1" class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
+            <article id="advisor-1"
+              class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
               <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5">
                   <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
-                    <img src="assets/images/member-husnul-portrait.png" 
-                         alt="Husnul Khotimah - Risk Management Consulting" 
-                         class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
+                    <img src="assets/images/member-husnul-portrait.png"
+                      alt="Husnul Khotimah - Risk Management Consulting"
+                      class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
                   </div>
-                  <div class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
+                  <div
+                    class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
                     <span class="text-brand-dark font-bold">Kemenkeu RI • PT BIMA</span>
                     <span class="text-brand-primary font-bold">12 Proyek</span>
                   </div>
                 </div>
                 <div class="md:col-span-7 space-y-4">
                   <div class="space-y-1">
-                    <div class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
+                    <div
+                      class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
                       <span>01 / 04</span>
                       <span>•</span>
                       <span>PRACTICE LEAD</span>
@@ -634,12 +685,15 @@
                     <p class="font-mono text-xs font-semibold text-brand-lead">Manajemen Risiko & Pemodelan Aktuaria</p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
-                    "Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi eksposur kerugian korporasi secara terukur."
+                  <p
+                    class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
+                    "Pemodelan volatilitas stokastik, simulasi Monte Carlo, dan analisis stresstest untuk memitigasi
+                    eksposur kerugian korporasi secara terukur."
                   </p>
 
                   <div class="space-y-1.5 text-xs text-brand-lead border-t fine-border-light pt-3">
-                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan Penugasan Utama:</p>
+                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan
+                      Penugasan Utama:</p>
                     <p>• Analisis Kinerja & Stabilitas DAK Fisik/Dana Desa Pemda Jatim (Volatilitas & K-Means)</p>
                     <p>• Dashboard Monitoring Kinerja Proyek, Aging Piutang & Capaian RKAP (Looker Studio)</p>
                     <p>• Analisis Risiko Portofolio Multiaset (ARIMA, Non-Linier, Monte Carlo & MCMC)</p>
@@ -654,7 +708,8 @@
                   </div>
 
                   <div class="pt-2">
-                    <a href="team/member-1.html" class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
+                    <a href="team/member-1.html"
+                      class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
                       Lihat Profil & 12 Proyek Lengkap &rarr;
                     </a>
                   </div>
@@ -663,36 +718,42 @@
             </article>
 
             <!-- Consultant 02: Szunir Laura Herliana -->
-            <article id="advisor-2" class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
+            <article id="advisor-2"
+              class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
               <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5">
                   <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
-                    <img src="assets/images/member-szunir-portrait.png" 
-                         alt="Szunir Laura Herliana - Data Analyst" 
-                         class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
+                    <img src="assets/images/member-szunir-portrait.png" alt="Szunir Laura Herliana - Data Analyst"
+                      class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
                   </div>
-                  <div class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
+                  <div
+                    class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
                     <span class="text-brand-dark font-bold">Pelindo • PT BIMA</span>
                     <span class="text-brand-primary font-bold">14 Proyek</span>
                   </div>
                 </div>
                 <div class="md:col-span-7 space-y-4">
                   <div class="space-y-1">
-                    <div class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
+                    <div
+                      class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
                       <span>02 / 04</span>
                       <span>•</span>
                       <span>LEAD ANALYST</span>
                     </div>
                     <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Szunir Laura Herliana</h3>
-                    <p class="font-mono text-xs font-semibold text-brand-lead">Analisis Data Kuantitatif & Visualisasi</p>
+                    <p class="font-mono text-xs font-semibold text-brand-lead">Analisis Data Kuantitatif & Visualisasi
+                    </p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
-                    "Mengubah tumpukan big data operasional dan keuangan menjadi arsitektur visual dashboard intelijen bisnis yang prediktif dan aplikatif."
+                  <p
+                    class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
+                    "Mengubah tumpukan big data operasional dan keuangan menjadi arsitektur visual dashboard intelijen
+                    bisnis yang prediktif dan aplikatif."
                   </p>
 
                   <div class="space-y-1.5 text-xs text-brand-lead border-t fine-border-light pt-3">
-                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan Penugasan Utama:</p>
+                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan
+                      Penugasan Utama:</p>
                     <p>• Analisis Gap Matrix & Pemetaan Kompetensi SDM Maritim (Pelindo Energi Logistik)</p>
                     <p>• Catastrophe Modeling Gempa Megathrust untuk Evaluasi Manajemen Risiko Bencana</p>
                     <p>• Komparasi Algoritma Supervised Learning (K-NN vs SVM) untuk Retensi Nasabah</p>
@@ -706,7 +767,8 @@
                   </div>
 
                   <div class="pt-2">
-                    <a href="team/member-2.html" class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
+                    <a href="team/member-2.html"
+                      class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
                       Lihat Profil & 14 Proyek Lengkap &rarr;
                     </a>
                   </div>
@@ -715,36 +777,42 @@
             </article>
 
             <!-- Consultant 03: Bernadeta Andrea P -->
-            <article id="advisor-3" class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
+            <article id="advisor-3"
+              class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
               <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5">
                   <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
-                    <img src="assets/images/member-andrea-portrait.png" 
-                         alt="Bernadeta Andrea P - Investment Consulting" 
-                         class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
+                    <img src="assets/images/member-andrea-portrait.png" alt="Bernadeta Andrea P - Investment Consulting"
+                      class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
                   </div>
-                  <div class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
+                  <div
+                    class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
                     <span class="text-brand-dark font-bold">Dapen Telkom • BPJS</span>
                     <span class="text-brand-primary font-bold">9 Proyek</span>
                   </div>
                 </div>
                 <div class="md:col-span-7 space-y-4">
                   <div class="space-y-1">
-                    <div class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
+                    <div
+                      class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
                       <span>03 / 04</span>
                       <span>•</span>
                       <span>PRACTICE LEAD</span>
                     </div>
                     <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Bernadeta Andrea P</h3>
-                    <p class="font-mono text-xs font-semibold text-brand-lead">Konsultasi Investasi & Alokasi Portofolio</p>
+                    <p class="font-mono text-xs font-semibold text-brand-lead">Konsultasi Investasi & Alokasi Portofolio
+                    </p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
-                    "Optimalisasi alokasi instrumen pendapatan tetap dan cash flow matching untuk menjamin ketahanan pemenuhan liabilitas jangka panjang."
+                  <p
+                    class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
+                    "Optimalisasi alokasi instrumen pendapatan tetap dan cash flow matching untuk menjamin ketahanan
+                    pemenuhan liabilitas jangka panjang."
                   </p>
 
                   <div class="space-y-1.5 text-xs text-brand-lead border-t fine-border-light pt-3">
-                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan Penugasan Utama:</p>
+                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan
+                      Penugasan Utama:</p>
                     <p>• Cash Flow Matching Obligasi Liabilitas Dana Pensiun (Dapen Telkom Bandung)</p>
                     <p>• Kajian Kelayakan Investasi Saham ICBP & INDF: Kinerja Finansial, ESG & Nilai Wajar</p>
                     <p>• Evaluasi Utilisasi Klaim Jaminan Kesehatan Nasional (BPJS Kesehatan Surakarta)</p>
@@ -758,7 +826,8 @@
                   </div>
 
                   <div class="pt-2">
-                    <a href="team/member-3.html" class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
+                    <a href="team/member-3.html"
+                      class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
                       Lihat Profil & 9 Proyek Lengkap &rarr;
                     </a>
                   </div>
@@ -767,36 +836,43 @@
             </article>
 
             <!-- Consultant 04: Shabina Aulya Anjanie H -->
-            <article id="advisor-4" class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
+            <article id="advisor-4"
+              class="scroll-reveal-card advisor-feature-card bg-brand-surface border fine-border p-6 sm:p-8 shadow-sm">
               <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5">
                   <div class="aspect-[4/5] bg-brand-lightBlue overflow-hidden fine-border border relative">
-                    <img src="assets/images/member-shabina-portrait.png" 
-                         alt="Shabina Aulya Anjanie H - Financial Consultant" 
-                         class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
+                    <img src="assets/images/member-shabina-portrait.png"
+                      alt="Shabina Aulya Anjanie H - Financial Consultant"
+                      class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
                   </div>
-                  <div class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
+                  <div
+                    class="p-2.5 bg-brand-paper border-t fine-border flex items-center justify-between text-[11px] font-mono text-brand-muted mt-2">
                     <span class="text-brand-dark font-bold">Dapen Freeport • BEM ITS</span>
                     <span class="text-brand-primary font-bold">14 Proyek</span>
                   </div>
                 </div>
                 <div class="md:col-span-7 space-y-4">
                   <div class="space-y-1">
-                    <div class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
+                    <div
+                      class="inline-flex items-center space-x-2 text-xs font-mono text-brand-primary font-bold tracking-widest uppercase">
                       <span>04 / 04</span>
                       <span>•</span>
                       <span>ADVISORY LEAD</span>
                     </div>
                     <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Shabina Aulya Anjanie H</h3>
-                    <p class="font-mono text-xs font-semibold text-brand-lead">Konsultasi Finansial & Valuasi Solvabilitas</p>
+                    <p class="font-mono text-xs font-semibold text-brand-lead">Konsultasi Finansial & Valuasi
+                      Solvabilitas</p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
-                    "Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan solvabilitas dan arus kas berkelanjutan."
+                  <p
+                    class="text-xs sm:text-sm text-brand-lead leading-relaxed italic border-l-2 border-brand-primary pl-3.5">
+                    "Perencanaan finansial multi-dekade dan restrukturisasi modal korporat untuk menjaga kecukupan
+                    solvabilitas dan arus kas berkelanjutan."
                   </p>
 
                   <div class="space-y-1.5 text-xs text-brand-lead border-t fine-border-light pt-3">
-                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan Penugasan Utama:</p>
+                    <p class="font-mono text-[10px] text-brand-muted uppercase tracking-wider font-bold">Sorotan
+                      Penugasan Utama:</p>
                     <p>• Perencanaan Kebutuhan Finansial Multi-Dekade 2026–2071 (Asuransi, Investasi & Pensiun)</p>
                     <p>• Valuasi Pembukuan & Kewajiban Perpajakan Dana Pensiun Freeport Indonesia</p>
                     <p>• Analisis Restrukturisasi Keuangan PT Garuda Indonesia (Persero) Tbk & Citilink</p>
@@ -810,7 +886,8 @@
                   </div>
 
                   <div class="pt-2">
-                    <a href="team/member-4.html" class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
+                    <a href="team/member-4.html"
+                      class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider px-5 py-2.5 bg-brand-primary text-white hover:bg-brand-dark transition-all shadow-sm">
                       Lihat Profil & 14 Proyek Lengkap &rarr;
                     </a>
                   </div>
@@ -830,32 +907,39 @@
          ========================================================================== -->
     <section id="governance" class="border-b fine-border py-20 lg:py-28 bg-brand-surface">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        
+
         <div class="max-w-3xl mb-16">
           <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Integritas Profesional</span>
           <h2 class="font-serif text-4xl text-brand-dark mt-2">Tata Kelola & Syarat Kerja Sama</h2>
           <p class="text-sm text-brand-lead mt-3">
-            Landasan etika dan kepatuhan hukum untuk menjamin rasa aman, kerahasiaan, dan kepastian deliverables bagi setiap mitra klien.
+            Landasan etika dan kepatuhan hukum untuk menjamin rasa aman, kerahasiaan, dan kepastian deliverables bagi
+            setiap mitra klien.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b fine-border">
           <div class="space-y-2.5">
-            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Kerahasiaan Ketat (Non-Disclosure Agreement)</p>
+            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Kerahasiaan Ketat
+              (Non-Disclosure Agreement)</p>
             <p class="text-xs text-brand-lead leading-relaxed">
-              Seluruh dataset operasional, parameter sensitif, dan laporan audit klien terikat dalam perjanjian kerahasiaan formal tanpa batas kedaluwarsa.
+              Seluruh dataset operasional, parameter sensitif, dan laporan audit klien terikat dalam perjanjian
+              kerahasiaan formal tanpa batas kedaluwarsa.
             </p>
           </div>
           <div class="space-y-2.5">
-            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Integritas Metodologi Aktuaria</p>
+            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Integritas Metodologi
+              Aktuaria</p>
             <p class="text-xs text-brand-lead leading-relaxed">
-              Setiap kalkulasi diverifikasi silang menggunakan standar matematika dan statistika inferensial baku tanpa intervensi data fiktif.
+              Setiap kalkulasi diverifikasi silang menggunakan standar matematika dan statistika inferensial baku tanpa
+              intervensi data fiktif.
             </p>
           </div>
           <div class="space-y-2.5">
-            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Hak Kepemilikan Deliverables Penuh</p>
+            <p class="font-mono text-xs uppercase tracking-wider text-brand-primary font-bold">Hak Kepemilikan
+              Deliverables Penuh</p>
             <p class="text-xs text-brand-lead leading-relaxed">
-              Laporan akhir komprehensif, arsitektur dashboard visual, dan model kalkulasi yang diserahkan sepenuhnya menjadi aset strategis milik klien.
+              Laporan akhir komprehensif, arsitektur dashboard visual, dan model kalkulasi yang diserahkan sepenuhnya
+              menjadi aset strategis milik klien.
             </p>
           </div>
         </div>
@@ -866,14 +950,16 @@
             <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Skema Pembayaran</span>
             <h4 class="text-xl font-bold text-brand-dark">Termin Bertahap Berbasis Milestones</h4>
             <p class="text-xs text-brand-lead leading-relaxed">
-              Pembayaran diatur secara transparan ke dalam tiga tahap: DP 30% pada penandatanganan PKS, 40% setelah penyerahan draft laporan interim, dan 30% final setelah presentasi eksekutif selesai dilakukan.
+              Pembayaran diatur secara transparan ke dalam tiga tahap: DP 30% pada penandatanganan PKS, 40% setelah
+              penyerahan draft laporan interim, dan 30% final setelah presentasi eksekutif selesai dilakukan.
             </p>
           </div>
           <div class="space-y-3">
             <span class="font-mono text-xs uppercase tracking-widest text-brand-muted">Fleksibilitas Kerja Sama</span>
             <h4 class="text-xl font-bold text-brand-dark">Protokol Penyesuaian Ruang Lingkup</h4>
             <p class="text-xs text-brand-lead leading-relaxed">
-              Setiap kebutuhan penambahan variabel atau cakupan analisis baru selama masa penugasan akan dituangkan melalui adendum tertulis yang disepakati bersama secara adil dan terukur.
+              Setiap kebutuhan penambahan variabel atau cakupan analisis baru selama masa penugasan akan dituangkan
+              melalui adendum tertulis yang disepakati bersama secara adil dan terukur.
             </p>
           </div>
         </div>
@@ -887,24 +973,25 @@
     <section id="contact" class="py-20 lg:py-28 bg-brand-dark text-white">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          
+
           <div class="lg:col-span-7 space-y-6">
             <span class="font-mono text-xs uppercase tracking-widest text-brand-sky">Inisiasi Kemitraan</span>
             <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
               Mulai diskusikan skenario mitigasi risiko dan pertumbuhan bisnis Anda.
             </h2>
             <p class="text-slate-300 text-sm max-w-xl leading-relaxed pt-2">
-              ACTIVA Consulting hadir sebagai mitra strategis yang menjembatani kompleksitas analisis data kuantitatif dengan kepraktisan pengambilan keputusan bisnis institusional.
+              ACTIVA Consulting hadir sebagai mitra strategis yang menjembatani kompleksitas analisis data kuantitatif
+              dengan kepraktisan pengambilan keputusan bisnis institusional.
             </p>
-            
+
             <div class="pt-4 flex flex-col sm:flex-row gap-4 font-mono text-xs">
-              <a href="mailto:activasurabaya@gmail.com?subject=Surat%20Penjajakan%20Kerja%20Sama%20-%20ACTIVA%20Consulting" 
-                 class="px-6 py-3.5 bg-white text-brand-dark font-bold uppercase tracking-wider text-center hover:bg-slate-100 transition-colors shadow-sm">
+              <a href="mailto:activasurabaya@gmail.com?subject=Surat%20Penjajakan%20Kerja%20Sama%20-%20ACTIVA%20Consulting"
+                class="px-6 py-3.5 bg-white text-brand-dark font-bold uppercase tracking-wider text-center hover:bg-slate-100 transition-colors shadow-sm">
                 Kirim Surat Penjajakan
               </a>
-              <a href="https://wa.me/6281249643767?text=Halo%20ACTIVA%20Consulting,%20kami%20ingin%20berkonsultasi" 
-                 target="_blank" rel="noopener noreferrer" 
-                 class="px-6 py-3.5 border border-slate-600 text-white font-bold uppercase tracking-wider text-center hover:border-white transition-colors">
+              <a href="https://wa.me/6281249643767?text=Halo%20tim%20ACTIVA%20Consulting,%20saya%20tertarik%20untuk%20melakukan%20konsultasi%20keuangan%2Finvestasi.%20Boleh%20diinfokan%20detail%20layanannya%3F"
+                target="_blank" rel="noopener noreferrer"
+                class="px-6 py-3.5 border border-slate-600 text-white font-bold uppercase tracking-wider text-center hover:border-white transition-colors">
                 Hubungi via WhatsApp
               </a>
             </div>
@@ -933,7 +1020,8 @@
 
         </div>
 
-        <div class="border-t border-slate-800 mt-20 pt-8 flex flex-col sm:flex-row justify-between text-xs font-mono text-slate-400 gap-4">
+        <div
+          class="border-t border-slate-800 mt-20 pt-8 flex flex-col sm:flex-row justify-between text-xs font-mono text-slate-400 gap-4">
           <p>© 2026 ACTIVA Consulting. All rights reserved.</p>
           <p>Actuarial • Insight • Value</p>
         </div>
@@ -950,4 +1038,5 @@
   </script>
   <script src="script.js"></script>
 </body>
+
 </html>
